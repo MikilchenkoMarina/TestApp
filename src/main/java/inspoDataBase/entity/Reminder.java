@@ -1,4 +1,4 @@
-package inspoDataBase.hibernateUsageDataBase.entity;
+package inspoDataBase.entity;
 
 import javax.persistence.*;
 

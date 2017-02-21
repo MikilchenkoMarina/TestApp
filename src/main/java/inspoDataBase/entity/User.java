@@ -1,6 +1,4 @@
-package inspoDataBase.hibernateUsageDataBase.entity;
-
-import org.hibernate.annotations.Cascade;
+package inspoDataBase.entity;
 
 import javax.persistence.*;
 import java.util.List;

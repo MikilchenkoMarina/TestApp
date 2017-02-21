@@ -1,8 +1,11 @@
-package inspoDataBase.hibernateUsageDataBase.hibernateDaoImplementation;
+package inspoDataBase.hibernateUsageDataBase.dao.impl;
 
-import inspoDataBase.hibernateUsageDataBase.dao.ReminderDao;
-import inspoDataBase.hibernateUsageDataBase.entity.Reminder;
-import org.hibernate.*;
+import inspoDataBase.hibernateUsageDataBase.dao.UserDao;
+import inspoDataBase.entity.User;
+import org.hibernate.HibernateException;
+import org.hibernate.ObjectNotFoundException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -15,13 +18,13 @@ import java.util.List;
 /**
  * Created by mmikilchenko on 14.02.2017.
  */
-@Repository("hibernateReminderDao")
-public class HibernateReminderDao implements ReminderDao {
+@Repository("hibernateUserDao")
 
+public class HibernateUserDao implements UserDao {
     private SessionFactory sessionFactory;
 
     @Autowired
-    public HibernateReminderDao(SessionFactory sessionFactory) {
+    public HibernateUserDao(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
@@ -35,38 +38,29 @@ public class HibernateReminderDao implements ReminderDao {
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = {ObjectNotFoundException.class, ConstraintViolationException.class})
-    public void addReminder(Reminder reminder) {
+    public void addUser(User user) {
         Session session = currentSession();
-        session.save(reminder);
+        //session.beginTransaction();
+        session.save(user);
+        //session.getTransaction().commit();
     }
 
     @Override
-    public Reminder getReminderById(int reminderId) {
+    public User getUserById(int id) {
         Session session = currentSession();
-        return (Reminder) session.get(Reminder.class, reminderId);
+        return (User) session.get(User.class, id);
     }
 
     @Override
-    public List<Reminder> showRemindersByUserId(int userId) {
+    public boolean deleteUserById(int id) {
+        return deleteById(User.class, id);
+    }
+
+    //@Transactional(propagation = Propagation.REQUIRED, rollbackFor = {ObjectNotFoundException.class, ConstraintViolationException.class})
+    @Override
+    public List<User> getAllUsers() {
         Session session = currentSession();
-        Query query = session.createQuery("from Reminder where user_id = :userId ");
-        query.setParameter("userId", userId);
-        return query.list();
-    }
-
-    @Override
-    public List<Reminder> showRemindersByTheme(int themeId) {
-        return null;
-    }
-
-    @Override
-    public void deleteReminderById(int reminderId) {
-        deleteById(Reminder.class, reminderId);
-    }
-
-    @Transactional(propagation = Propagation.REQUIRED, rollbackFor = {ObjectNotFoundException.class, ConstraintViolationException.class})
-    public void updateReminder(Reminder reminder) {
-        currentSession().saveOrUpdate(reminder);
+        return session.createQuery("from User").list();
     }
 
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = {ObjectNotFoundException.class, ConstraintViolationException.class})
@@ -74,6 +68,7 @@ public class HibernateReminderDao implements ReminderDao {
         Session session = currentSession();
         Object persistentInstance = session.load(type, id);
         if (persistentInstance != null) {
+
             session.delete(persistentInstance);
             session.saveOrUpdate(persistentInstance);
             return true;
