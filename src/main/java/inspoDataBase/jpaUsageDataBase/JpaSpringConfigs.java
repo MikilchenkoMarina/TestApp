@@ -5,7 +5,6 @@ package inspoDataBase.jpaUsageDataBase;
  */
 
 
-import inspoDataBase.jpaUsageDataBase.service.ReminderService;
 import inspoDataBase.jpaUsageDataBase.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -82,10 +81,10 @@ public class JpaSpringConfigs {
         return new PersistenceExceptionTranslationPostProcessor();
     }
 
-    @Bean
+/*    @Bean
     public ReminderService reminderService() {
         return new ReminderService();
-    }
+    }*/
 
     @Bean
     public UserService userService() {

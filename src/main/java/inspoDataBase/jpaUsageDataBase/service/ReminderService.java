@@ -2,10 +2,9 @@ package inspoDataBase.jpaUsageDataBase.service;
 
 import inspoDataBase.entity.Reminder;
 import inspoDataBase.entity.User;
-import inspoDataBase.jpaUsageDataBase.JpaSpringConfigs;
 import inspoDataBase.jpaUsageDataBase.jpaRepository.ReminderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -13,7 +12,7 @@ import java.util.List;
 /**
  * Created by mmikilchenko on 21.02.2017.
  */
-@ContextConfiguration(classes = {JpaSpringConfigs.class})
+@Service("reminderService")
 @Transactional
 public class ReminderService {
     @Autowired
