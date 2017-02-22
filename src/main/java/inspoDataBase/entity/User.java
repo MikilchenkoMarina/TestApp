@@ -16,14 +16,14 @@ public class User {
     private int userId;
 
     @Basic
-    @Column(name = "USER_NAME", nullable = true, length = 45)
+    @Column(name = "USER_NAME", length = 45)
     private String userName;
 
     @Basic
-    @Column(name = "USER_PASSWORD", nullable = true, length = 45)
+    @Column(name = "USER_PASSWORD", length = 45)
     private String userPassword;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     @ElementCollection(targetClass = Reminder.class)
     private List<Reminder> reminders;
 
@@ -74,8 +74,6 @@ public class User {
         return "User{" +
                 "userId=" + userId +
                 ", userName='" + userName + '\'' +
-                ", userPassword='" + userPassword + '\'' +
-                ", reminders=" + reminders +
                 '}';
     }
 }

@@ -43,7 +43,7 @@ public class StandaloneJdbcDbAppTest {
         System.out.println(userDao.getUserById(5));
 
         //  Delete User
-        // userDao.deleteUserById(5);
+        // userDao.deleteByUserId(5);
 
     }
 }

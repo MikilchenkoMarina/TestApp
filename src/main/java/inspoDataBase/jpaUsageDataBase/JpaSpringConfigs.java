@@ -5,7 +5,8 @@ package inspoDataBase.jpaUsageDataBase;
  */
 
 
-import inspoDataBase.jpaUsageDataBase.app.MainBean;
+import inspoDataBase.jpaUsageDataBase.service.ReminderService;
+import inspoDataBase.jpaUsageDataBase.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -82,8 +83,13 @@ public class JpaSpringConfigs {
     }
 
     @Bean
-    public MainBean mainBean() {
-        return new MainBean();
+    public ReminderService reminderService() {
+        return new ReminderService();
+    }
+
+    @Bean
+    public UserService userService() {
+        return new UserService();
     }
 
 }

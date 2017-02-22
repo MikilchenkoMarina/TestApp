@@ -13,7 +13,7 @@
     <properties>
         <spring-framework-version>4.3.0.RELEASE</spring-framework-version>
         <hibernate-version>4.0.1.Final</hibernate-version>
-        <jpa-version>1.2.0.RELEASE</jpa-version>
+        <jpa-version>1.7.0.RELEASE</jpa-version>
     </properties>
     <build>
         <plugins>
