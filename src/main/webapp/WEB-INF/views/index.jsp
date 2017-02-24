@@ -11,10 +11,9 @@
 <body>
 <spring:form method="post" modelAttribute="userJSP" action="check-user">
 
-    Name: <spring:input
-        path="name"/> (path="" - указывает путь, используемый в modelAttribute=''. в нашем случае User.name) <br/>
-    Password: <spring:input path="password"/> <br/>
-    <spring:button>Next Page</spring:button>
+    Name: <spring:input path="name"/> Enter UserName <br/>
+    Password: <spring:input path="password"/> Enter password <br/>
+    <spring:button>Submit</spring:button>
 
 </spring:form>
 
