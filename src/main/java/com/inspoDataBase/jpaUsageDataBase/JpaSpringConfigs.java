@@ -1,11 +1,15 @@
-package com.inspoweb.configs;
+package com.inspoDataBase.jpaUsageDataBase;
+
+/**
+ * Created by mmikilchenko on 20.02.2017.
+ */
+
 
 import com.inspoDataBase.jpaUsageDataBase.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.FilterType;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -15,7 +19,6 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -23,14 +26,11 @@ import java.util.Properties;
 
 import static org.springframework.orm.jpa.vendor.Database.MYSQL;
 
-/**
- * @author mmikilchenko on 24.02.2017.
- */
 @Configuration
 @EnableJpaRepositories(basePackages = "com.inspoDataBase.jpaUsageDataBase.jpaRepository")
 @EnableTransactionManagement
-@ComponentScan(/*basePackages = "com", excludeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION, value = EnableWebMvc.class)}*/)
-public class RootConfig {
+@ComponentScan
+public class JpaSpringConfigs {
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource ds = new DriverManagerDataSource();
@@ -51,7 +51,7 @@ public class RootConfig {
                 new LocalContainerEntityManagerFactoryBean();
         lcemfBean.setDataSource(dataSource);
         lcemfBean.setJpaVendorAdapter(jpaVendorAdapter);
-        lcemfBean.setPackagesToScan("com.inspoDataBase.entity","com.inspoweb.model");
+        lcemfBean.setPackagesToScan("com.inspoDataBase.entity", "com.inspoweb.model");
         lcemfBean.afterPropertiesSet();
         return lcemfBean.getObject();
     }
@@ -90,4 +90,5 @@ public class RootConfig {
     public UserService userService() {
         return new UserService();
     }
+
 }
