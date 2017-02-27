@@ -52,6 +52,11 @@ public class RootConfig {
         lcemfBean.setDataSource(dataSource);
         lcemfBean.setJpaVendorAdapter(jpaVendorAdapter);
         lcemfBean.setPackagesToScan("com.inspoDataBase.entity");
+
+        Properties prop = new Properties();
+        prop.setProperty("javax.persistence.validation.mode", "none");
+        lcemfBean.setJpaProperties(prop);
+
         lcemfBean.afterPropertiesSet();
         return lcemfBean.getObject();
     }

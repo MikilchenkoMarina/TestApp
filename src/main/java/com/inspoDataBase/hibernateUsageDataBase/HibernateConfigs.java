@@ -44,6 +44,7 @@ public class HibernateConfigs {
         Properties props = new Properties();
         props.setProperty("dialect", "org.hibernate.dialect.H2Dialect");
         props.setProperty("connection.autocommit", "true");
+        props.setProperty("javax.persistence.validation.mode", "AUTO");
         sfb.setHibernateProperties(props);
         return sfb;
     }

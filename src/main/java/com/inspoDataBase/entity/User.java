@@ -1,6 +1,9 @@
 package com.inspoDataBase.entity;
 
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 
@@ -13,23 +16,31 @@ public class User {
 
     @Id
     @Column(name = "ID")
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int userId;
 
     @Basic
     @Column(name = "FIRST_NAME", length = 45)
+    @NotNull
+    @Size(min = 3, max = 45)
     private String firstName;
 
     @Basic
     @Column(name = "LAST_NAME", length = 45)
+    @NotNull
+    @Size(min = 3, max = 45)
     private String lastName;
 
     @Basic
     @Column(name = "USERNAME", length = 45)
+    @NotNull
+    @Size(min = 3, max = 45)
     private String userName;
 
     @Basic
     @Column(name = "PASSWORD", length = 45)
+    @NotNull
+    @Size(min = 7)
     private String password;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -39,8 +50,8 @@ public class User {
     public User() {
     }
 
-    public User( String firstName, String lastName, String userName, String password, List<Reminder> reminders) {
-           this.reminders = reminders;
+    public User(String firstName, String lastName, String userName, String password, List<Reminder> reminders) {
+        this.reminders = reminders;
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
@@ -82,7 +93,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-              ", userName='" + this.userName + '\'' +
+                ", userName='" + this.userName + '\'' +
                 '}';
     }
 

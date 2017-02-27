@@ -23,6 +23,7 @@ public class ThemeController {
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public String reminders(Map<String,Object> model) {
         model.put("themeList",themeService.findAllThemas());
+
         return "theme";
     }
 
