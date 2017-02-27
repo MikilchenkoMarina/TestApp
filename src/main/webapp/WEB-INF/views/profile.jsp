@@ -12,6 +12,7 @@
             font-size: 200%;
             font-family: Arial, Verdana, sans-serif;
         }
+
         H2 {
             color: #00004d;
             font-size: 100%;
@@ -28,11 +29,11 @@
 
 <body>
 <h1>User Profile</h1>
-<h2>First Name ${user.firstName} !!!</h2>
+<h2>First Name ${user.firstName} </h2>
 <br/>
-<h2>Last Name ${user.lastName} !!!</h2>
+<h2>Last Name ${user.lastName} </h2>
 <br/>
-<h2>username ${user.userName} !!!</h2>
+<h2>username ${user.userName} </h2>
 <br/>
 <h2>passwotd : ${user.password}</h2>
 <br/>

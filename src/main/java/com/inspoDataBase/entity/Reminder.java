@@ -29,8 +29,7 @@ public class Reminder {
     public Reminder() {
     }
 
-    public Reminder(/*int reminderId,*/ String reminderText, String themeId, User user) {
-      //  this.reminderId = reminderId;
+    public Reminder(String reminderText, String themeId, User user) {
         this.reminderText = reminderText;
         this.themeId = themeId;
         this.user = user;

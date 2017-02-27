@@ -39,9 +39,8 @@ public class User {
     public User() {
     }
 
-    public User(/*int userId,*/ String firstName, String lastName, String userName, String password, List<Reminder> reminders) {
-       // this.userId = userId;
-        this.reminders = reminders;
+    public User( String firstName, String lastName, String userName, String password, List<Reminder> reminders) {
+           this.reminders = reminders;
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;

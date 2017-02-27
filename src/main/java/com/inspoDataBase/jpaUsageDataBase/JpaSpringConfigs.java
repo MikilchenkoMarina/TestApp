@@ -51,7 +51,7 @@ public class JpaSpringConfigs {
                 new LocalContainerEntityManagerFactoryBean();
         lcemfBean.setDataSource(dataSource);
         lcemfBean.setJpaVendorAdapter(jpaVendorAdapter);
-        lcemfBean.setPackagesToScan("com.inspoDataBase.entity", "com.inspoweb.model");
+        lcemfBean.setPackagesToScan("com.inspoDataBase.entity");
         lcemfBean.afterPropertiesSet();
         return lcemfBean.getObject();
     }
