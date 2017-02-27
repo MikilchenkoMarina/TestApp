@@ -29,7 +29,7 @@ import static org.springframework.orm.jpa.vendor.Database.MYSQL;
 @Configuration
 @EnableJpaRepositories(basePackages = "com.inspoDataBase.jpaUsageDataBase.jpaRepository")
 @EnableTransactionManagement
-@ComponentScan(/*basePackages = "com", excludeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION, value = EnableWebMvc.class)}*/)
+@ComponentScan(basePackages = "com", excludeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION, value = EnableWebMvc.class)})
 public class RootConfig {
     @Bean
     public DataSource dataSource() {
@@ -51,7 +51,7 @@ public class RootConfig {
                 new LocalContainerEntityManagerFactoryBean();
         lcemfBean.setDataSource(dataSource);
         lcemfBean.setJpaVendorAdapter(jpaVendorAdapter);
-        lcemfBean.setPackagesToScan("com.inspoDataBase.entity","com.inspoweb.model");
+        lcemfBean.setPackagesToScan("com.inspoDataBase.entity");
         lcemfBean.afterPropertiesSet();
         return lcemfBean.getObject();
     }

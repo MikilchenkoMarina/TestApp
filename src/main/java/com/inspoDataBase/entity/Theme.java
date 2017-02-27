@@ -1,4 +1,4 @@
-package com.inspoweb.model;
+package com.inspoDataBase.entity;
 
 import javax.persistence.*;
 

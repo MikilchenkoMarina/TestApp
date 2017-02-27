@@ -1,6 +1,6 @@
 package com.inspoDataBase.jpaUsageDataBase.jpaRepository;
 
-import com.inspoweb.model.Theme;
+import com.inspoDataBase.entity.Theme;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

@@ -1,6 +1,6 @@
 package com.inspoDataBase.jpaUsageDataBase.service;
 
-import com.inspoweb.model.Theme;
+import com.inspoDataBase.entity.Theme;
 import com.inspoDataBase.jpaUsageDataBase.jpaRepository.ThemeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

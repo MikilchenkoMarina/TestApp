@@ -6,7 +6,7 @@
 <html>
 
 <head>
-    <title>Login Page</title>
+    <title>Inspominder</title>
 </head>
 
 <body>
