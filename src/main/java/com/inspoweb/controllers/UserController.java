@@ -2,11 +2,10 @@ package com.inspoweb.controllers;
 
 import com.inspoDataBase.entity.User;
 import com.inspoDataBase.jpaUsageDataBase.service.UserService;
-import com.sun.org.apache.bcel.internal.generic.GETFIELD;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.Errors;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -29,14 +28,14 @@ public class UserController {
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String showRegistrationForm() {
 
-        return "registerForm";
+        return "registerjstl";
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public String processRegistration(@Valid User user, Errors errors) {
+    public String processRegistration(@Valid User user,BindingResult resul) {
         userService.addUser(user);
 
-        if (errors.hasErrors()) {
+        if (resul.hasErrors()) {
 
             return "registerForm";
         }

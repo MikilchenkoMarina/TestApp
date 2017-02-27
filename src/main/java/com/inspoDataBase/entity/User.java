@@ -21,26 +21,24 @@ public class User {
 
     @Basic
     @Column(name = "FIRST_NAME", length = 45)
-    @NotNull
-    @Size(min = 3, max = 45)
+    @NotNull(message = "Please enter your first name.")
     private String firstName;
 
     @Basic
     @Column(name = "LAST_NAME", length = 45)
-    @NotNull
-    @Size(min = 3, max = 45)
+    @NotNull(message = "Please enter your last name.")
     private String lastName;
 
     @Basic
     @Column(name = "USERNAME", length = 45)
-    @NotNull
-    @Size(min = 3, max = 45)
+    @NotNull(message = "Please enter your username.")
+    @Size(min = 3, max = 45, message = "First name must have from 3 to 45 symbols.")
     private String userName;
 
     @Basic
     @Column(name = "PASSWORD", length = 45)
-    @NotNull
-    @Size(min = 7)
+    @NotNull(message = "Please enter your password.")
+    @Size(min = 7, message = "Password must have min 7 symbols.")
     private String password;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)

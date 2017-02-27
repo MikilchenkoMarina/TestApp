@@ -2,8 +2,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="springForm" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>Inspominder</title>
@@ -37,21 +35,28 @@
 <body>
 <h1>Register</h1>
 <a href="?mylocale=en">English </a> | <a href="?mylocale=de">German </a>
-<spring:form method="post" modelAttribute="user" action="#">
-    First Name:<springForm:input path="firstName"/>
-    <springForm:errors path="firstName" cssClass="error"/> </br>
+<form method="POST">
+    First Name:
+    <input type="text" name="firstName"/>
+    <errors path="firstName" cssClass="error"/>
+    </br>
 
-    Last Name:<springForm:input path="lastName"/>
-    <springForm:errors path="lastName" cssClass="error"/> </br>
+    Last Name:
+    <input type="text" name="lastName"/>
+    <errors path="lastName" cssClass="error"/>
+    </br>
 
-    Username: <springForm:input path="userName"/>
-    <springForm:errors path="userName" cssClass="error"/> </br>
+    Username:
+    <input type="text" name="userName"/>
+    <errors path="userName" cssClass="error"/>
+    </br>
 
-    Password: <springForm:input path="password"/>
-    <springForm:errors path="password" cssClass="error"/> </br>
+    Password:
+    <input type="text" name="password"/>
+    <errors path="password" cssClass="error"/>
+    </br>
+    <input type="submit" value="Register"/>
+</form>
 
-    <spring:button>Register</spring:button>
-
-</spring:form>
 </body>
 </html>

@@ -86,10 +86,6 @@ public class RootConfig {
         return new PersistenceExceptionTranslationPostProcessor();
     }
 
-/*    @Bean
-    public ReminderService themeService() {
-        return new ReminderService();
-    }*/
 
     @Bean
     public UserService userService() {
