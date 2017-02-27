@@ -30,7 +30,7 @@ public class User {
 
     @Basic
     @Column(name = "PASSWORD", length = 45)
-    private String userPassword;
+    private String password;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     @ElementCollection(targetClass = Reminder.class)
@@ -39,13 +39,13 @@ public class User {
     public User() {
     }
 
-    public User(/*int userId,*/ String firstName, String lastName, String userName, String userPassword, List<Reminder> reminders) {
+    public User(/*int userId,*/ String firstName, String lastName, String userName, String password, List<Reminder> reminders) {
        // this.userId = userId;
         this.reminders = reminders;
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
-        this.userPassword = userPassword;
+        this.password = password;
     }
 
     public int getUserId() {
@@ -64,12 +64,12 @@ public class User {
         this.userName = userName;
     }
 
-    public String getUserPassword() {
-        return userPassword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
+    public void setPassword(String userPassword) {
+        this.password = userPassword;
     }
 
     public List<Reminder> getReminders() {
