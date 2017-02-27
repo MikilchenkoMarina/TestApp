@@ -1,0 +1,33 @@
+H1 {
+    color: #000080;
+    font-size: 200%;
+    font-family: Arial, Verdana, sans-serif;
+    text-align: center;
+}
+H2 {
+    color: #000080;
+    font-size: 150%;
+    font-family: Arial, Verdana, sans-serif;
+    text-align: left;
+}
+P {
+    padding-left: 20px;
+    color: red;
+    }
+
+body {background-color: powderblue;}
+button
+{
+    display: inline-block;
+    margin-top: 2em;
+    padding: 1em 2em 1em 2em;
+    background: #40493C;
+    border-radius: 7px;
+    border: 1px solid #373F34;
+    letter-spacing: 0.20em;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.90em;
+    color: #FFF;
+}
