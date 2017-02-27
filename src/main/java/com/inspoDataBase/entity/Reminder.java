@@ -10,7 +10,8 @@ import javax.persistence.*;
 public class Reminder {
 
     @Id
-    @Column(name = "REMINDER_ID", nullable = false)
+    @Column(name = "ID", nullable = false)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int reminderId;
 
     @ManyToOne(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY)
@@ -18,7 +19,7 @@ public class Reminder {
     private User user;
 
     @Basic
-    @Column(name = "REMINDER_TEXT", length = 200)
+    @Column(name = "TEXT", length = 200)
     private String reminderText;
 
     @Basic
@@ -28,8 +29,8 @@ public class Reminder {
     public Reminder() {
     }
 
-    public Reminder(int reminderId, String reminderText, String themeId, User user) {
-        this.reminderId = reminderId;
+    public Reminder(/*int reminderId,*/ String reminderText, String themeId, User user) {
+      //  this.reminderId = reminderId;
         this.reminderText = reminderText;
         this.themeId = themeId;
         this.user = user;

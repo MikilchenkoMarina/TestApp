@@ -12,15 +12,24 @@ import java.util.List;
 public class User {
 
     @Id
-    @Column(name = "USER_ID", nullable = false)
+    @Column(name = "ID")
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int userId;
 
     @Basic
-    @Column(name = "USER_NAME", length = 45)
+    @Column(name = "FIRST_NAME", length = 45)
+    private String firstName;
+
+    @Basic
+    @Column(name = "LAST_NAME", length = 45)
+    private String lastName;
+
+    @Basic
+    @Column(name = "USERNAME", length = 45)
     private String userName;
 
     @Basic
-    @Column(name = "USER_PASSWORD", length = 45)
+    @Column(name = "PASSWORD", length = 45)
     private String userPassword;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -30,9 +39,11 @@ public class User {
     public User() {
     }
 
-    public User(int userId, String userName, String userPassword, List<Reminder> reminders) {
-        this.userId = userId;
+    public User(/*int userId,*/ String firstName, String lastName, String userName, String userPassword, List<Reminder> reminders) {
+       // this.userId = userId;
         this.reminders = reminders;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.userName = userName;
         this.userPassword = userPassword;
     }
@@ -72,8 +83,27 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "userId=" + userId +
-                ", userName='" + userName + '\'' +
+              ", userName='" + this.userName + '\'' +
                 '}';
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setReminders(List<Reminder> reminders) {
+        this.reminders = reminders;
     }
 }

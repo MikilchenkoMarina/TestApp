@@ -1,5 +1,6 @@
 package com.inspoweb.controllers;
 
+import com.inspoDataBase.entity.User;
 import com.inspoDataBase.jpaUsageDataBase.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,6 +23,12 @@ public class UserController {
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String showRegistrationForm() {
         return "registerForm";
+    }
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public String processRegistration (User user){
+        userService.addUser(user);
+        return "redirect:/user/"+user.getUserName();
+
     }
 
 

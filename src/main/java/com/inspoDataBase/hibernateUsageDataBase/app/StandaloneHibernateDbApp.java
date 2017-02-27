@@ -25,14 +25,14 @@ public class StandaloneHibernateDbApp {
         List<Reminder> remList = new ArrayList<>();
 
 
-        Reminder reminderOne = new Reminder(1, "As our case is new, we must think and act anew. ", "Abraham Lincoln Quotes", null);
-        Reminder reminderTwo = new Reminder(2, "Important principles may, and must, be inflexible. ", "First Theme", null);
+        Reminder reminderOne = new Reminder( "As our case is new, we must think and act anew. ", "Abraham Lincoln Quotes", null);
+        Reminder reminderTwo = new Reminder( "Important principles may, and must, be inflexible. ", "First Theme", null);
         remList.addAll(Arrays.asList(reminderOne, reminderTwo));
 
         reminderDao.addReminder(reminderOne);
         reminderDao.addReminder(reminderTwo);
 
-        User testUser = new User(1, "TestUserName1", "pass", remList);
+        User testUser = new User(/*1,*/ "Marina", "Mikilchenko", "mikimar", "pass", remList);
         userDao.addUser(testUser);
 
         updateRemembers(reminderDao, remList, testUser);

@@ -32,9 +32,9 @@ public class JpaRepositoryTest {
     @Test
     public void start() {
 
-        User testUser = new User(1, "TestUserName1", "pass", null);
+        User testUser = new User("Marina", "Mikilchenko", "mikimar", "pass", null);
         userRepository.saveAndFlush(testUser);
-        Reminder newReminder = new Reminder(3, "Test Jpa Reminder. ", "Test Quotes", testUser);
+        Reminder newReminder = new Reminder( "Test Jpa Reminder. ", "Test Quotes", testUser);
 
         reminderRepository.saveAndFlush(newReminder);
         assertNotNull(reminderRepository);

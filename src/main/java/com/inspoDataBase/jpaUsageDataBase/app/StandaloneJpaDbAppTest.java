@@ -27,9 +27,9 @@ public class StandaloneJpaDbAppTest {
 
         themeService.findAllThemas();
 
-        User testUser = new User(1, "Billy Jonson", "pass", null);
-        Reminder remFirst = new Reminder(1, "The only source of knowledge is experience.", "Albert Einstein Quotes", testUser);
-        Reminder remSecond = new Reminder(2, "Never do anything against conscience even if the state demands it.", "Albert Einstein Quotes", testUser);
+        User testUser = new User(/*1,*/ "Marina", "Mikilchenko", "mikimar", "pass", null);
+        Reminder remFirst = new Reminder("The only source of knowledge is experience.", "Albert Einstein Quotes", testUser);
+        Reminder remSecond = new Reminder("Never do anything against conscience even if the state demands it.", "Albert Einstein Quotes", testUser);
 
         userService.addUser(testUser);
         reminderService.addReminder(remFirst, testUser);
@@ -45,7 +45,7 @@ public class StandaloneJpaDbAppTest {
         reminderService.printReminders(byUserAndTextListReminder);
 
         User byUserIdUser = userService.findUserByUserId(1);
-        System.out.println(String.format("User by id %s search result : %s", 1, byUserIdUser.toString()));
+
 
         userService.deleteUserById(1);
 
