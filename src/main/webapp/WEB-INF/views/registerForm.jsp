@@ -5,43 +5,42 @@
 <html>
 <head>
     <title>Inspominder</title>
-    <link href="<c:url value="/resources/css/myCustom.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/form.css" />" rel="stylesheet">
 </head>
-<br>
+<body>
+<link href="<c:url value="/resources/css/form.css" />" rel="stylesheet">
 <h1><s:message code="inspominder.register"/></h1>
 
-<a href="?mylocale=en">English </a> | <a href="?mylocale=de">German </a>
+
 
 <springForm:form method="POST" commandName="user">
+<div class="form-style-2">
+    <a href="?mylocale=en">English </a> | <a href="?mylocale=de">German </a>
 
-    <springForm:label path="firstName" cssErrorClass="error">
-        <s:message code="inspominder.firstName"/>
-    </springForm:label>
-    <springForm:input path="firstName" cssErrorClass="error"/>
+    <div class="form-style-2-heading">Provide your information</div>
+
+    <springForm:label path="firstName"> <span> <s:message code="inspominder.firstName"/> <span class="required">*</span></span> </springForm:label>
     <springForm:errors path="firstName" cssClass="error"/> </br>
+    <springForm:input path="firstName" class="input-field" cssErrorClass="error"/>
 
-    <springForm:label path="lastName" cssErrorClass="error">
-        <s:message code="inspominder.lastName"/>
-    </springForm:label>
-    <springForm:input path="lastName" cssErrorClass="error"/>
+
+    <springForm:label path="lastName" > <span> <s:message code="inspominder.lastName"/> <span class="required">*</span></span></springForm:label>
+    <springForm:input path="lastName" class="input-field" cssErrorClass="error"/>
     <springForm:errors path="lastName" cssClass="error"/> </br>
 
-    <springForm:label path="userName" cssErrorClass="error">
-        <s:message code="inspominder.userName"/>
-    </springForm:label>
-    <springForm:input path="userName" cssErrorClass="error"/>
+    <springForm:label path="userName"><span> <s:message code="inspominder.userName"/> <span class="required">*</span></span> </springForm:label>
+    <springForm:input path="userName" class="input-field" cssErrorClass="error" />
     <springForm:errors path="userName" cssClass="error"/> </br>
 
-    <springForm:label path="password" cssErrorClass="error">
-        <s:message code="inspominder.password"/>
-    </springForm:label>
-    <springForm:input path="password" cssErrorClass="error"/>
+    <springForm:label path="password">  <span> <s:message code="inspominder.password"/> <span class="required">*</span></span>    </springForm:label>
+    <springForm:input path="password" class="input-field" cssErrorClass="error"/>
     <springForm:errors path="password" cssClass="error"/> </br>
 
     <springForm:button>
-        <s:message code="inspominder.register"/>
+        <label><span>&nbsp;</span> <s:message code="inspominder.register"/></label>
     </springForm:button>
 
-</springForm:form>
+    </springForm:form>
+</div>
 </body>
 </html>
