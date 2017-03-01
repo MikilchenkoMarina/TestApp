@@ -26,13 +26,14 @@ public class UserController {
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
-    public String showRegistrationForm() {
+    public String showRegistrationForm(Model model) {
+        model.addAttribute("user", new User());
 
-        return "registerjstl";
+        return "registerForm";
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public String processRegistration(@Valid User user,BindingResult resul) {
+    public String processRegistration(@Valid User user, BindingResult resul) {
         userService.addUser(user);
 
         if (resul.hasErrors()) {

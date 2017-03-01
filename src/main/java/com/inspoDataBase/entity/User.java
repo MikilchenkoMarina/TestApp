@@ -1,9 +1,12 @@
 package com.inspoDataBase.entity;
 
 
+
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
+
 import java.util.List;
 
 
@@ -21,24 +24,22 @@ public class User {
 
     @Basic
     @Column(name = "FIRST_NAME", length = 45)
-    @NotNull(message = "Please enter your first name.")
+    @Size(min = 3, max = 45, message = "{Size.user.firstName}  ")
     private String firstName;
 
     @Basic
     @Column(name = "LAST_NAME", length = 45)
-    @NotNull(message = "Please enter your last name.")
+    @Size(min = 3, max = 45, message = "{Size.user.lastName}  ")
     private String lastName;
 
     @Basic
     @Column(name = "USERNAME", length = 45)
-    @NotNull(message = "Please enter your username.")
-    @Size(min = 3, max = 45, message = "First name must have from 3 to 45 symbols.")
+    @Size(min = 7, max = 45, message = "{Size.user.userName}  ")
     private String userName;
 
     @Basic
     @Column(name = "PASSWORD", length = 45)
-    @NotNull(message = "Please enter your password.")
-    @Size(min = 7, message = "Password must have min 7 symbols.")
+    @Size(min = 3, max = 45, message = "{Size.user.password}  ")
     private String password;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
