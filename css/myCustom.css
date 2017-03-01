@@ -1,0 +1,30 @@
+span.error {
+    color: red;
+    font-weight: bold;
+}
+
+label.error {
+    color: red;
+}
+
+input.error {
+    background-color: #f086a3;
+}
+
+H1 {
+    color: #000080;
+    font-size: 200%;
+    font-family: Arial, Verdana, sans-serif;
+}
+
+body {
+    background-color: powderblue;
+}
+
+input {
+    display: inline-block;
+    margin-top: 2em;
+    padding: 1em 2em 1em 2em;
+    border-radius: 7px;
+    border: 1px solid #373F34;
+}

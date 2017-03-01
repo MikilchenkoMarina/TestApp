@@ -1,42 +1,22 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Inspominder</title>
 </head>
 
-<head>
-    <title>Inspominder</title>
-    <style>
-        H1 {
-            color: #000080;
-            font-size: 200%;
-            font-family: Arial, Verdana, sans-serif;
-        }
-
-        H2 {
-            color: #00004d;
-            font-size: 100%;
-            font-family: Arial, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: powderblue;
-        }
-
-    </style>
-    <%--<link rel="stylesheet" type="text/css" href="<c:url value="/resources/myCustom.css" />">--%>
-</head>
-
 <body>
-<h1>User Profile</h1>
-<h2>First Name ${user.firstName} </h2>
-<br/>
-<h2>Last Name ${user.lastName} </h2>
-<br/>
-<h2>username ${user.userName} </h2>
-<br/>
-<h2>passwotd : ${user.password}</h2>
-<br/>
+<h1><s:message code="inspominder.userProfile"/> </h1>
+
+<link href="<c:url value="/resources/css/myCustom.css" />" rel="stylesheet">
+
+<a href="?mylocale=en">English </a> | <a href="?mylocale=de">German </a> </br>
+
+<h2><s:message code="inspominder.firstName"/> : ${user.firstName} </h2> <br/>
+<h2><s:message code="inspominder.lastName"/>: ${user.lastName} </h2> <br/>
+<h2><s:message code="inspominder.userName"/>: ${user.userName} </h2> <br/>
+<h2><s:message code="inspominder.password"/>: ${user.password}</h2> <br/>
 </body>
 
 </html>

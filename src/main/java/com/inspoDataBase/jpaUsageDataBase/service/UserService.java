@@ -27,6 +27,10 @@ public class UserService {
         userRepository.deleteByUserId(userId);
     }
 
+    public User findUserByUsernameAndPassword(String userName, String password) {
+        return userRepository.findByUserNameAndPassword(userName, password);
+    }
+
     public void printUserList(List<User> usersList) {
         for (User user : usersList) {
             System.out.println(user.toString());
