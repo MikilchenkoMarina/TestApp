@@ -58,7 +58,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     @Bean
     public MessageSource messageSource() {
         ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-        messageSource.setBasename("/WEB-INF/messages/validationMessages");
+        messageSource.setBasename("/WEB-INF/messages/messages");
         messageSource.setDefaultEncoding("UTF-8");
         return messageSource;
     }
@@ -67,19 +67,21 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     public MessageSourceAccessor messageSourceAccessor() {
         return new MessageSourceAccessor(messageSource());
     }
-/*    @Bean
-    public LocaleResolver localeResolver(){
+
+    @Bean
+    public LocaleResolver localeResolver() {
         CookieLocaleResolver resolver = new CookieLocaleResolver();
         resolver.setDefaultLocale(new Locale("en"));
         resolver.setCookieName("myLocaleCookie");
         resolver.setCookieMaxAge(4800);
         return resolver;
     }
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         LocaleChangeInterceptor interceptor = new LocaleChangeInterceptor();
         interceptor.setParamName("mylocale");
-        registry.addInterceJava MVC Spprinf form vaptor(interceptor);
-    }*/
+        registry.addInterceptor(interceptor);
+    }
 
 }
