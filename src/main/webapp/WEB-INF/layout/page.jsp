@@ -10,14 +10,18 @@
 </head>
 <br>
 <body>
+
+
 <div id="header">
     <t:insertAttribute name="header"/>
 </div>
 <div id="body">
     <t:insertAttribute name="body"/>
 </div>
-<div id="footer">
-    <t:insertAttribute name="footer"/>
+<div id="footer" cssClass="footer">
+    <p><t:insertAttribute name="footer"/></p>
+
 </div>
+
 </body>
 </html>

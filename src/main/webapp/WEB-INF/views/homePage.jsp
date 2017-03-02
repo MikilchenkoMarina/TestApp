@@ -7,12 +7,10 @@
     <title>Inspominder</title>
     <link href="<c:url value="/resources/css/myCustom.css" />" rel="stylesheet">
 </head>
-<br>
+
+<body>
 <h1><s:message code="inspominder.welcome"/></h1></br>
-
-<a href="?mylocale=en">English </a> | <a href="?mylocale=de">German </a> </br>
-
-<a href="<c:url value="user/register"/>">Register </a> | <a href="<c:url value="user/login"/>">Login </a>
+<h2><a href="<c:url value="user/register"/>">Register </a> | <a href="<c:url value="user/login"/>">Login </a></h2>
 </body>
 
 </html>
