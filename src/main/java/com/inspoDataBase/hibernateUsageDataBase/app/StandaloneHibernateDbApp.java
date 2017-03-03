@@ -25,8 +25,8 @@ public class StandaloneHibernateDbApp {
         List<Reminder> remList = new ArrayList<>();
 
 
-        Reminder reminderOne = new Reminder( "As our case is new, we must think and act anew. ", "Abraham Lincoln Quotes", null);
-        Reminder reminderTwo = new Reminder( "Important principles may, and must, be inflexible. ", "First Theme", null);
+        Reminder reminderOne = new Reminder("As our case is new, we must think and act anew. ", "Abraham Lincoln Quotes", null);
+        Reminder reminderTwo = new Reminder("Important principles may, and must, be inflexible. ", "First Theme", null);
         remList.addAll(Arrays.asList(reminderOne, reminderTwo));
 
         reminderDao.addReminder(reminderOne);
@@ -37,11 +37,10 @@ public class StandaloneHibernateDbApp {
 
         updateRemembers(reminderDao, remList, testUser);
 
-        printUser(userDao, 1);
 
-        printRemindersByUserId(reminderDao, 1);
+        printRemindersByUserId(reminderDao, testUser.getUserId());
 
-        userDao.deleteUserById(1);
+        userDao.deleteUserById(testUser.getUserId());
 
         printAllExistedUsersList(userDao);
 
@@ -55,7 +54,7 @@ public class StandaloneHibernateDbApp {
 
     public static void printRemindersByUserId(ReminderDao reminderDao, int userId) {
         for (Reminder userReminder : reminderDao.showRemindersByUserId(userId)) {
-            System.out.println(" THEME :  " + userReminder.getThemeId() + " Reminder text : " + userReminder.getReminderText());
+            System.out.println(" THEME :  " + userReminder.getThemeId() + " Reminder text : " + userReminder.getText());
         }
     }
 

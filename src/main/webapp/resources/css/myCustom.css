@@ -1,37 +1,191 @@
-span.error {
-    color: red;
-    font-weight: bold;
-}
-
-label.error {
-    color: red;
-}
-
-input.error {
-    background-color: #f086a3;
-}
-
-H1 {
-    color: #000080;
-    font-size: 200%;
-    font-family: Arial, Verdana, sans-serif;
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
 }
 
 body {
-    background-color: powderblue;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    position: relative;
+    background-color: rgb(200, 233, 252);
 }
 
-input {
-    display: inline-block;
-    margin-top: 2em;
-    padding: 1em 2em 1em 2em;
-    border-radius: 7px;
-    border: 1px solid #373F34;
+#header {
+    height: 3em;
+    width: 100%;
+}
+
+#body {
+    padding-bottom: 2.5em;
+}
+
+#footer {
+    text-align: center;
+    height: 2.5em;
+    width: 100%;
+    padding-bottom: 5px;
+    position: absolute;
+    bottom: 0;
+}
+
+#column-1 {
+    width: 20%;
+    height: 300px;
+    background: #fff9ff;
+    float: left;
+    padding: 20px;
+    margin-left: 15px;
+    border-radius: 5px;
+    border: 2px solid #0b6e9a;
+    border-radius: 3px;
+}
+#column-2 {
+    width: 35%;
+    height: 300px;
+    overflow-y : scroll;
+    background: #fff9ff;
+    float: left;
+    padding: 20px;
+    margin-left: 15px;
+    border: 2px solid #0b6e9a;
+    border-radius: 3px;
+}
+#column-3{
+    width: 30%;
+    height: 300px;
+    background: #fff9ff;
+    float: left;
+    padding: 20px;
+    margin-left: 15px;
+    border: 2px solid #0b6e9a;
+    border-radius: 3px;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    color: #0a3349;
+    font-size: 200%;
+    font-family: Georgia, "Times New Roman", Times, serif
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 100%;
+    color: #0a3349;
+    font-family: Georgia, "Times New Roman", Times, serif
+
 }
 
 a {
-    color: #000080;
-    font-size: 100%;
-    font-family: Arial, Verdana, sans-serif;
+    font-weight: bold;
+    text-align: right;
+    color: #0a3349;
+    font-family: Georgia, "Times New Roman", Times, serif
+}
+
+a:hover {
+    color: #0b6e9a;
+}
+
+.form-style-7 {
+    max-width: 400px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 5px;
+    padding: 30px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.form-style-7 ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.form-style-7 li {
+    display: block;
+    padding: 9px;
+    border: 1px solid #DDDDDD;
+    margin-bottom: 30px;
+    border-radius: 3px;
+}
+
+.form-style-7 li > label {
+    display: block;
+    float: left;
+    margin-top: -19px;
+    background: #FFFFFF;
+    height: 14px;
+    padding: 2px 5px 2px 5px;
+    color: #B9B9B9;
+    font-size: 14px;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-style-7 input {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    display: block;
+    outline: none;
+    border: none;
+    height: 25px;
+    line-height: 25px;
+    font-size: 16px;
+    padding: 0;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.form-style-7 input:focus {
+}
+
+.form-style-7 li > span {
+    background: #F3F3F3;
+    display: block;
+    padding: 3px;
+    margin: 0 -9px -9px -9px;
+    text-align: center;
+    color: #C0C0C0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+
+.form-style-7 textarea {
+    resize: none;
+}
+
+.form-style-7 span.error {
+    color: rgba(249, 113, 151, 0.97);
 
 }
+
+.form-style-7 label.error {
+    width: 100%;
+    color: #f97197;
+}
+
+.form-style-7 input.error {
+    background-color: #f0b6c3;
+}
+
+.form-style-7 button {
+    background: rgba(0, 0, 90, 0.85);
+    border: none;
+    padding: 10px 20px 10px 20px;
+    border-bottom: 3px solid rgba(25, 25, 25, 0.81);
+    border-radius: 3px;
+    color: #fff;
+}
+
+.form-style-7 button:hover {
+    background: #0000aa;
+    color: #fff;
+}
+
+

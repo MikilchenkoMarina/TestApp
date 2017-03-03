@@ -1,6 +1,9 @@
 package com.inspoDataBase.entity;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 /**
  * Created by mmikilchenko on 15.02.2017.
@@ -20,17 +23,19 @@ public class Reminder {
 
     @Basic
     @Column(name = "TEXT", length = 200)
-    private String reminderText;
+    @NotEmpty( message = "{NotEmpty.reminder.text}  ")
+    private String text;
 
     @Basic
     @Column(name = "THEME_ID", length = 45)
+    @NotEmpty( message = "{NotEmpty.reminder.theme}  ")
     private String themeId;
 
     public Reminder() {
     }
 
-    public Reminder(String reminderText, String themeId, User user) {
-        this.reminderText = reminderText;
+    public Reminder(String text, String themeId, User user) {
+        this.text = text;
         this.themeId = themeId;
         this.user = user;
     }
@@ -51,12 +56,12 @@ public class Reminder {
         this.user = user;
     }
 
-    public String getReminderText() {
-        return reminderText;
+    public String getText() {
+        return text;
     }
 
-    public void setReminderText(String reminderText) {
-        this.reminderText = reminderText;
+    public void setText(String reminderText) {
+        this.text = reminderText;
     }
 
     public String getThemeId() {
@@ -72,7 +77,7 @@ public class Reminder {
     public String toString() {
         return "Reminder{" +
                 "reminderId=" + reminderId +
-                ", reminderText='" + reminderText + '\'' +
+                ", reminderText='" + text + '\'' +
                 ", themeId='" + themeId + '\'' +
                 '}';
     }
