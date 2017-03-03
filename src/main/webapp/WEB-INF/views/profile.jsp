@@ -13,39 +13,45 @@
 
 <link href="<c:url value="/resources/css/myCustom.css" />" rel="stylesheet">
 
+<div id="column-1">
+    <h2><s:message code="inspominder.firstName"/> : </h2> ${user.firstName} <br/>
+    <h2><s:message code="inspominder.lastName"/> : </h2> ${user.lastName} <br/>
+    <h2><s:message code="inspominder.userName"/> : </h2> ${user.userName} <br/>
+    <h2><s:message code="inspominder.password"/> : </h2> ${user.password} <br/>
 
-<h2><s:message code="inspominder.firstName"/> : ${user.firstName} </h2> <br/>
-<h2><s:message code="inspominder.lastName"/>: ${user.lastName} </h2> <br/>
-<h2><s:message code="inspominder.userName"/>: ${user.userName} </h2> <br/>
-<h2><s:message code="inspominder.password"/>: ${user.password}</h2> <br/>
-<h3><s:message code="inspominder.Reminders"/></h3></br>
+</div>
 
-<ol>
-    <c:forEach var="reminder" items="${reminderList}">
-        <li>
-            <div><c:out value="${reminder.themeId}"/> : <c:out value="${reminder.text}"/></div>
-        </li>
-    </c:forEach>
-</ol>
+<div id="column-2">
+    <h3><s:message code="inspominder.Reminders"/></h3></br>
+    <a href="1/reminders"> Reminders List </a>
+    <ol>
+        <c:forEach var="reminder" items="${reminderList}">
+            <li>
+                <div><c:out value="${reminder.themeId}"/> : <c:out value="${reminder.text}"/></div>
+            </li>
+        </c:forEach>
+    </ol>
 
 
-<springForm:form method="POST" commandName="reminder" cssClass="form-style-7">
-    <ul>
-        <li>
-            <springForm:label path="text"> <s:message code="inspominder.text"/> </springForm:label>
-            <springForm:input path="text" cssErrorClass="error"/>
-            <springForm:errors path="text" cssClass="error"/>
-        </li>
+</div>
+<div id="column-3">
+    <springForm:form method="POST" commandName="reminder" cssClass="form-style-7">
+        <ul>
+            <li>
+                <springForm:label path="text"> <s:message code="inspominder.text"/> </springForm:label>
+                <springForm:input path="text" cssErrorClass="error"/>
+                <springForm:errors path="text" cssClass="error"/>
+            </li>
 
-        <li>
-            <springForm:label path="themeId"><s:message code="inspominder.theme"/></springForm:label>
-            <springForm:input path="themeId" cssErrorClass="error"/>
-            <springForm:errors path="themeId" cssClass="error"/>
-        </li>
-    </ul>
-    <springForm:button> <s:message code="inspominder.addReminder"/> </springForm:button>
-</springForm:form>
-
+            <li>
+                <springForm:label path="themeId"><s:message code="inspominder.theme"/></springForm:label>
+                <springForm:input path="themeId" cssErrorClass="error"/>
+                <springForm:errors path="themeId" cssClass="error"/>
+            </li>
+        </ul>
+        <springForm:button> <s:message code="inspominder.addReminder"/> </springForm:button>
+    </springForm:form>
+</div>
 </body>
 
 </html>

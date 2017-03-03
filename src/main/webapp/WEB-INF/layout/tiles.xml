@@ -24,4 +24,7 @@
     <definition name="theme" extends="base">
         <put-attribute name="body" value="/WEB-INF/views/theme.jsp"/>
     </definition>
+    <definition name="remindersPage" extends="base">
+        <put-attribute name="body" value="/WEB-INF/views/remindersPage.jsp"/>
+    </definition>
 </tiles-definitions>

@@ -4,23 +4,19 @@ import com.inspoDataBase.entity.Reminder;
 import com.inspoDataBase.entity.User;
 import com.inspoDataBase.jpaUsageDataBase.service.ReminderService;
 import com.inspoDataBase.jpaUsageDataBase.service.UserService;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ExtendedModelMap;
+
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
+import javax.swing.*;
 import javax.validation.Valid;
 import java.util.List;
-import java.util.Optional;
+
 
 /**
  * @author mmikilchenko on 27.02.2017.
@@ -31,13 +27,12 @@ public class UserController {
     private UserService userService;
     private ReminderService reminderService;
 
-    @Autowired
-    Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
     @Autowired
     public UserController(UserService userService, ReminderService reminderService) {
         this.userService = userService;
         this.reminderService = reminderService;
+
     }
 
     //registration
@@ -95,17 +90,16 @@ public class UserController {
         User user = userService.findUserByUserId(id);
         if (!resul.hasErrors()) {
             reminderService.addReminder(reminder, user);
-        }else{
+        } else {
+            JOptionPane pane = new JOptionPane();
+            pane.requestFocusInWindow();
+            pane.requestFocus();
 
-            alert.setTitle("Message Here...");
-            alert.setHeaderText("Look, an Information Dialog");
-            alert.setContentText("I have a great message for you!");
-            alert.showAndWait().ifPresent(rs -> {
-                if (rs == ButtonType.OK) {
-                    System.out.println("Pressed OK.");
-                }
-            });
-
+            final JDialog d = pane.createDialog((JFrame) null, "Title");
+            d.requestFocusInWindow();
+            d.setFocusable(true);
+            d.setLocation(10, 10);
+            d.setVisible(true);
         }
         return "redirect:/user/{id}";
 
