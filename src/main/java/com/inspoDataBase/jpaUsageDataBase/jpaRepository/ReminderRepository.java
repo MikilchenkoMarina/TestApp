@@ -15,7 +15,7 @@ public interface ReminderRepository extends JpaRepository<Reminder, Integer> {
 
     List<Reminder> findAll();
 
-    List<Reminder> findByReminderText(String reminderText);
+    List<Reminder> findByText(String text);
 
     /**
      * Finds a reminder by using the user as a search criteria.
@@ -26,7 +26,7 @@ public interface ReminderRepository extends JpaRepository<Reminder, Integer> {
      */
     List<Reminder> findByUser(User user);
 
-    List<Reminder> findByUserAndReminderText(User user, String reminderText);
+    List<Reminder> findByUserAndText(User user, String text);
 
     /**
      * ( demonstrate the usage of @Query annotation )

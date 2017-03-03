@@ -9,16 +9,15 @@
     <link href="<c:url value="/resources/css/myCustom.css" />" rel="stylesheet">
 </head>
 <br>
+
 <body>
-
-
-<div id="header">
+ <div id="header">
     <t:insertAttribute name="header"/>
 </div>
 <div id="body">
     <t:insertAttribute name="body"/>
 </div>
-<div id="footer" cssClass="footer">
+<div id="footer" >
     <p><t:insertAttribute name="footer"/></p>
 
 </div>

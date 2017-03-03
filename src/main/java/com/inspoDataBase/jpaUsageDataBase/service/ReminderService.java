@@ -24,7 +24,7 @@ public class ReminderService {
     }
 
     public List<Reminder> findReminderByText(String text) {
-        return reminderRepository.findByReminderText(text);
+        return reminderRepository.findByText(text);
     }
 
     public List<Reminder> findReminderAll() {
@@ -35,8 +35,8 @@ public class ReminderService {
         return reminderRepository.findByUser(user);
     }
 
-    public List<Reminder> findReminderByUserAndText(User user, String reminderText) {
-        return reminderRepository.findByUserAndReminderText(user, reminderText);
+    public List<Reminder> findReminderByUserAndText(User user, String text) {
+        return reminderRepository.findByUserAndText(user, text);
     }
 
     public void printReminders(List<Reminder> reminderList) {

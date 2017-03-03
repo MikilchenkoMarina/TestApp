@@ -1,6 +1,7 @@
 package com.inspoDataBase.entity;
 
 
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
@@ -32,11 +33,13 @@ public class User {
 
     @Basic
     @Column(name = "USERNAME", length = 45)
-      @Size(min = 7, max = 45, message = "{Size.user.userName}  ")
+    @NotEmpty
+    @Size(min = 7, max = 45, message = "{Size.user.userName}  ")
     private String userName;
 
     @Basic
     @Column(name = "PASSWORD", length = 45)
+    @NotEmpty
     @Size(min = 3, max = 45, message = "{Size.user.password}  ")
     private String password;
 
