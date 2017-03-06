@@ -27,4 +27,7 @@
     <definition name="remindersPage" extends="base">
         <put-attribute name="body" value="/WEB-INF/views/remindersPage.jsp"/>
     </definition>
+    <definition name="sent-list" extends="base">
+        <put-attribute name="body" value="/WEB-INF/views/sent-list.jsp"/>
+    </definition>
 </tiles-definitions>
