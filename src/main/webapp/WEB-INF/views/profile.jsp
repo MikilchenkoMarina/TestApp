@@ -23,7 +23,8 @@
 
 <div id="column-2">
     <h3><s:message code="inspominder.Reminders"/></h3></br>
-    <a href="1/reminders"> Reminders List </a>
+
+    <a href="<c:url value="${user.userId}"/>/reminders">  Reminders List</a>
     <ol>
         <c:forEach var="reminder" items="${reminderList}">
             <li>

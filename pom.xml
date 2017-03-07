@@ -214,6 +214,13 @@
             <version>3.0.5</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-core</artifactId>
+            <version>3.0.5</version>
+        </dependency>
+
+
         <!-- https://mvnrepository.com/artifact/com.zenjava/javafx-maven-plugin -->
 
 

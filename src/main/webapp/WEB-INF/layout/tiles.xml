@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE tiles-definitions PUBLIC
         "-//Apache Software Foundation//DtD Tiles Configuration 3.0//EN"
-        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+        "C:\Java_Pro\inspominder-spring-application\src\main\webapp\WEB-INF\layout\tiles-config_3_0.dtd">
+<!--"http://tiles.apache.org/dtds/tiles-config_3_0.dtd"-->
 <tiles-definitions>
     <definition name="base" template="/WEB-INF/layout/page.jsp">
+
         <put-attribute name="header" value="/WEB-INF/layout/header.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
 
@@ -12,22 +14,28 @@
     <definition name="homePage" extends="base">
         <put-attribute name="body" value="/WEB-INF/views/homePage.jsp"/>
     </definition>
+
     <definition name="loginForm" extends="base">
         <put-attribute name="body" value="/WEB-INF/views/loginForm.jsp"/>
     </definition>
+
     <definition name="registerForm" extends="base">
         <put-attribute name="body" value="/WEB-INF/views/registerForm.jsp"/>
     </definition>
+
     <definition name="profile" extends="base">
         <put-attribute name="body" value="/WEB-INF/views/profile.jsp"/>
     </definition>
+
     <definition name="theme" extends="base">
         <put-attribute name="body" value="/WEB-INF/views/theme.jsp"/>
     </definition>
-    <definition name="remindersPage" extends="base">
-        <put-attribute name="body" value="/WEB-INF/views/remindersPage.jsp"/>
+
+    <definition name="reminders" extends="base">
+        <put-attribute name="body" value="/WEB-INF/views/reminders.jsp"/>
     </definition>
-    <definition name="sent-list" extends="base">
-        <put-attribute name="body" value="/WEB-INF/views/sent-list.jsp"/>
+
+    <definition name="reminder" extends="base">
+        <put-attribute name="body" value="/WEB-INF/views/reminder.jsp"/>
     </definition>
 </tiles-definitions>
