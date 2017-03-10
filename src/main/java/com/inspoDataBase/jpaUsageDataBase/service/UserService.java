@@ -3,6 +3,7 @@ package com.inspoDataBase.jpaUsageDataBase.service;
 import com.inspoDataBase.entity.User;
 import com.inspoDataBase.jpaUsageDataBase.jpaRepository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
  * @author mmikilchenko on 22.02.2017.
  */
 @Transactional
+@Service
 public class UserService {
     @Autowired
     UserRepository userRepository;
@@ -29,6 +31,10 @@ public class UserService {
 
     public User findUserByUsernameAndPassword(String userName, String password) {
         return userRepository.findByUserNameAndPassword(userName, password).get(0);
+    }
+
+    public User findUserByUsername(String userName) {
+        return userRepository.findByUserName(userName).get(0);
     }
 
     public void printUserList(List<User> usersList) {

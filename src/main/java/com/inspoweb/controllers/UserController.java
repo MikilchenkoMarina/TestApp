@@ -24,6 +24,7 @@ import java.util.List;
 @Controller
 @RequestMapping(value = "/user")
 public class UserController {
+
     private UserService userService;
     private ReminderService reminderService;
 
@@ -35,48 +36,10 @@ public class UserController {
 
     }
 
-    //registration
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
-    public String showRegistrationForm(Model model) {
-        model.addAttribute("user", new User());
 
-        return "registerForm";
-    }
-
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public String processRegistration(@Valid User user, BindingResult resul) {
-        userService.addUser(user);
-
-        if (resul.hasErrors()) {
-            return "registerForm";
-        }
-
-        return "redirect:/user/" + user.getUserId();
-    }
-
-    //login
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String showLoginForm(Model model) {
-        model.addAttribute("user", new User());
-
-        return "loginForm";
-    }
-
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String processLogin(@Valid User user, BindingResult resul) {
-        User existedUser = userService.findUserByUsernameAndPassword(user.getUserName(), user.getPassword());
-        if (existedUser == null || resul.hasErrors()) {
-            return "loginForm";
-        }
-
-  /*      return Optional.ofNullable("redirect:/user/" + existedUser.getUserId())
-                .orElse("loginForm");*/
-        return "redirect:/user/" + existedUser.getUserId();
-    }
-
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String showUserProfile(@PathVariable Integer id, Model model) {
-        User user = userService.findUserByUserId(id);
+    @RequestMapping(value = "/{userName}", method = RequestMethod.GET)
+    public String showUserProfileByUserName(@PathVariable String userName, Model model) {
+        User user = userService.findUserByUsername(userName);
         List<Reminder> userReminders = reminderService.findReminderByUser(user);
         model.addAttribute("user", user);
         model.addAttribute("reminderList", userReminders);
@@ -84,10 +47,10 @@ public class UserController {
         return "profile";
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.POST)
-    public String addReminderOnUserProfile(@PathVariable Integer id, @Valid Reminder reminder, BindingResult resul) {
+    @RequestMapping(value = "/{userName}", method = RequestMethod.POST)
+    public String addReminderOnUserProfile(@PathVariable String userName, @Valid Reminder reminder, BindingResult resul) {
 
-        User user = userService.findUserByUserId(id);
+        User user = userService.findUserByUsername(userName);
         if (!resul.hasErrors()) {
             reminderService.addReminder(reminder, user);
         } else {
@@ -101,11 +64,8 @@ public class UserController {
             d.setLocation(10, 10);
             d.setVisible(true);
         }
-        return "redirect:/user/{id}";
+        return "redirect:/user/{userName}";
 
     }
-
-
-
 
 }

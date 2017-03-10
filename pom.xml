@@ -14,6 +14,7 @@
         <spring-framework-version>4.3.0.RELEASE</spring-framework-version>
         <hibernate-version>4.0.1.Final</hibernate-version>
         <jpa-version>1.7.0.RELEASE</jpa-version>
+        <spring.security.version>4.0.0.RELEASE</spring.security.version>
     </properties>
     <build>
         <plugins>
@@ -219,9 +220,18 @@
             <artifactId>tiles-core</artifactId>
             <version>3.0.5</version>
         </dependency>
+        <!-- Spring Security -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
 
-
-        <!-- https://mvnrepository.com/artifact/com.zenjava/javafx-maven-plugin -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
 
 
 

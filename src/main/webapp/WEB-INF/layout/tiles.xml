@@ -15,8 +15,8 @@
         <put-attribute name="body" value="/WEB-INF/views/homePage.jsp"/>
     </definition>
 
-    <definition name="loginForm" extends="base">
-        <put-attribute name="body" value="/WEB-INF/views/loginForm.jsp"/>
+    <definition name="login" extends="base">
+        <put-attribute name="body" value="/WEB-INF/views/login.jsp"/>
     </definition>
 
     <definition name="registerForm" extends="base">
@@ -37,5 +37,9 @@
 
     <definition name="reminder" extends="base">
         <put-attribute name="body" value="/WEB-INF/views/reminder.jsp"/>
+    </definition>
+
+    <definition name="welcome" extends="base">
+        <put-attribute name="body" value="/WEB-INF/views/welcome.jsp"/>
     </definition>
 </tiles-definitions>
