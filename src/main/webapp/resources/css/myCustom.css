@@ -42,10 +42,11 @@ body {
     border: 2px solid #0b6e9a;
     border-radius: 3px;
 }
+
 #column-2 {
     width: 35%;
     height: 300px;
-    overflow-y : scroll;
+    overflow-y: scroll;
     background: #fff9ff;
     float: left;
     padding: 20px;
@@ -53,7 +54,8 @@ body {
     border: 2px solid #0b6e9a;
     border-radius: 3px;
 }
-#column-3{
+
+#column-3 {
     width: 30%;
     height: 300px;
     background: #fff9ff;
@@ -62,6 +64,18 @@ body {
     margin-left: 15px;
     border: 2px solid #0b6e9a;
     border-radius: 3px;
+}
+
+#top-right-1 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#top-right-2 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
 h1 {
@@ -73,6 +87,7 @@ h1 {
 }
 
 h2 {
+    text-align: center;
     font-weight: bold;
     font-size: 100%;
     color: #0a3349;
@@ -187,5 +202,25 @@ a:hover {
     background: #0000aa;
     color: #fff;
 }
+
+
+.form-style-7 a#link1 {
+    display: block;
+    margin: 0 -9px -9px -9px;
+    text-align: center;
+    background: rgb(8, 68, 10);
+    border: none;
+    padding: 50px 120px 10px 20px;
+    border-bottom: 3px solid rgba(25, 25, 25, 0.81);
+    border-radius: 3px;
+    color: #fff;
+}
+
+.form-style-7 a:hover {
+    background: #626262;
+    color: #fff;
+}
+
+
 
 

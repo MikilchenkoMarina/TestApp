@@ -17,6 +17,8 @@ public interface ReminderRepository extends JpaRepository<Reminder, Integer> {
 
     List<Reminder> findByText(String text);
 
+   Reminder findByReminderId(int reminderId);
+
     /**
      * Finds a reminder by using the user as a search criteria.
      *

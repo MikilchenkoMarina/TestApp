@@ -9,28 +9,25 @@
 
 <body>
 
-<h1>User Reminders list</h1>
+<h1><s:message code="inspominder.userProfile"/></h1>
 
 <link href="<c:url value="/resources/css/myCustom.css" />" rel="stylesheet">
 
 <div id="column-2">
-    <h3><s:message code="inspominder.Reminders"/></h3></br>
-    <springForm:form method="POST" commandName="reminderList">
+    <springForm:form method="delete"  modelAttribute="reminder"    cssClass="form-style-7">
+        <input type="hidden" name="_method" value="DELETE"/>
+        ${reminder.reminderId}  </br>
+        ${reminder.themeId} </br>
+        ${reminder.text} </br>
 
-        <ol>
-            <c:forEach var="reminder" items="${reminderList}">
-                <li>
-                    <div><c:out value="${reminder.themeId}"/> : <c:out value="${reminder.text}"/></div>
-                </li>
-            </c:forEach>
-        </ol>
-       <%-- <ul>
-            <springForm:checkboxes element="li" path="reminder" items="${reminderList}"/>
-        </ul>--%>
+        <h2>Are you sure You want Delete this reminder ?</h2>
+
+
         <springForm:button> Delete </springForm:button>
     </springForm:form>
 
 </div>
+
 </body>
 
 </html>

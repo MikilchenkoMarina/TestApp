@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.MessageSourceAccessor;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.HandlerMapping;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.ViewResolver;
@@ -98,6 +99,11 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         interceptor.setParamName("mylocale");
         registry.addInterceptor(interceptor);
     }
+
+@Bean
+public HiddenHttpMethodFilter hiddenHttpMethodFilter() {
+   	return new HiddenHttpMethodFilter();
+     	}
 
 
 }

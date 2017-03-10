@@ -1,6 +1,5 @@
 package com.inspoweb.configs;
 
-import com.inspoDataBase.jpaUsageDataBase.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -89,8 +88,5 @@ public class RootConfig {
 
 
 
-    @Bean
-    public UserService userService() {
-        return new UserService();
-    }
+
 }

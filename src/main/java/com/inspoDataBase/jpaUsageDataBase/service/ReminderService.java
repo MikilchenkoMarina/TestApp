@@ -39,6 +39,10 @@ public class ReminderService {
         return reminderRepository.findByUserAndText(user, text);
     }
 
+    public Reminder findReminderById(int reminderId) {
+        return reminderRepository.findByReminderId(reminderId);
+    }
+
     public void printReminders(List<Reminder> reminderList) {
         for (Reminder reminder : reminderList) {
             System.out.println(reminder.toString());
