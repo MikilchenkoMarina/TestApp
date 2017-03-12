@@ -13,20 +13,6 @@
 
 <h1><s:message code="inspominder.userProfile"/></h1>
 
-<!-- /logout -->
-<div>
-
-    <c:if test="${pageContext.request.userPrincipal.name != null}">
-        <form id="logoutForm" method="POST" action="${contextPath}/logout">
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-        </form>
-        <h2>Welcome ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a>
-        </h2>
-    </c:if>
-
-</div>
-
-
 <div id="column-1">
     <h2><s:message code="inspominder.firstName"/> : </h2> ${user.firstName} <br/>
     <h2><s:message code="inspominder.lastName"/> : </h2> ${user.lastName} <br/>
@@ -37,7 +23,6 @@
 
 <div id="column-2">
     <h3><s:message code="inspominder.Reminders"/></h3></br>
-
     <a href="<c:url value="${user.userId}"/>/reminders"> Reminders List</a>
     <ol>
         <c:forEach var="reminder" items="${reminderList}">
@@ -46,7 +31,6 @@
             </li>
         </c:forEach>
     </ol>
-
 
 </div>
 <div id="column-3">
@@ -67,10 +51,6 @@
         <springForm:button> <s:message code="inspominder.addReminder"/> </springForm:button>
     </springForm:form>
 </div>
-
-<!-- /container -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 
 </body>
 

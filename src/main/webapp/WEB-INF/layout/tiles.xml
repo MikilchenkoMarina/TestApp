@@ -11,8 +11,8 @@
 
     </definition>
 
-    <definition name="homePage" extends="base">
-        <put-attribute name="body" value="/WEB-INF/views/homePage.jsp"/>
+    <definition name="home" extends="base">
+        <put-attribute name="body" value="/WEB-INF/views/home.jsp"/>
     </definition>
 
     <definition name="login" extends="base">
@@ -39,7 +39,5 @@
         <put-attribute name="body" value="/WEB-INF/views/reminder.jsp"/>
     </definition>
 
-    <definition name="welcome" extends="base">
-        <put-attribute name="body" value="/WEB-INF/views/welcome.jsp"/>
-    </definition>
+
 </tiles-definitions>
