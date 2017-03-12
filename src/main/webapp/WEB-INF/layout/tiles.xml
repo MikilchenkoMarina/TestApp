@@ -39,5 +39,9 @@
         <put-attribute name="body" value="/WEB-INF/views/reminder.jsp"/>
     </definition>
 
+    <definition name="upload" extends="base">
+        <put-attribute name="body" value="/WEB-INF/views/upload.jsp"/>
+    </definition>
+
 
 </tiles-definitions>
