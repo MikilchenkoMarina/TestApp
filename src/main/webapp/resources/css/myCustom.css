@@ -40,7 +40,7 @@ body {
     margin-left: 15px;
     border-radius: 5px;
     border: 2px solid #0b6e9a;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 #column-2 {
@@ -52,7 +52,7 @@ body {
     padding: 20px;
     margin-left: 15px;
     border: 2px solid #0b6e9a;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 #column-3 {
@@ -63,19 +63,7 @@ body {
     padding: 20px;
     margin-left: 15px;
     border: 2px solid #0b6e9a;
-    border-radius: 3px;
-}
-
-#top-right-1 {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-#top-right-2 {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    border-radius: 5px;
 }
 
 h1 {
@@ -96,6 +84,7 @@ h2 {
 }
 
 a {
+    text-decoration: none;
     font-weight: bold;
     text-align: right;
     color: #0a3349;
@@ -103,6 +92,7 @@ a {
 }
 
 a:hover {
+    text-decoration: underline;
     color: #0b6e9a;
 }
 
@@ -111,14 +101,14 @@ a:hover {
     margin: 20px auto;
     background: #fff;
     border-radius: 5px;
-    padding: 30px;
+    padding: 15px;
     font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .form-style-7 ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 10px;
 }
 
 .form-style-7 li {
@@ -171,6 +161,18 @@ a:hover {
     font-size: 11px;
 }
 
+.form-style-7 > div.form-group > span {
+    background: #ffffff;
+    height: auto;
+    display: block;
+    padding: 3px;
+    margin: 0 -9px -9px -9px;
+    text-align: center;
+    color: #0a3349;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+}
+
 .form-style-7 textarea {
     resize: none;
 }
@@ -203,23 +205,13 @@ a:hover {
     color: #fff;
 }
 
-
-.form-style-7 a#link1 {
-    display: block;
-    margin: 0 -9px -9px -9px;
-    text-align: center;
-    background: rgb(8, 68, 10);
-    border: none;
-    padding: 50px 120px 10px 20px;
-    border-bottom: 3px solid rgba(25, 25, 25, 0.81);
-    border-radius: 3px;
-    color: #fff;
+div.form-style-7 div.top-right-block {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 10px 10px 10px 10px;
 }
 
-.form-style-7 a:hover {
-    background: #626262;
-    color: #fff;
-}
 
 
 

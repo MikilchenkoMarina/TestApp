@@ -37,11 +37,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.formLogin()
                 .loginPage("/login")
-                .defaultSuccessUrl("/welcome")
+                .defaultSuccessUrl("/home")
                 .permitAll()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/resources/**", "/register","/home").permitAll()
+                .antMatchers("/resources/**", "/register", "/home").permitAll()
                 .antMatchers("/user/**").authenticated()
                 .anyRequest().permitAll();
 

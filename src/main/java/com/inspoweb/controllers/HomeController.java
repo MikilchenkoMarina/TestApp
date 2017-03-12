@@ -22,14 +22,13 @@ public class HomeController {
 
     @Autowired
     public HomeController(UserService userService) {
-
         this.userService = userService;
     }
 
     @RequestMapping(method = RequestMethod.GET)
     public String showRegistrationForm() {
 
-        return "homePage";
+        return "home";
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
@@ -63,9 +62,5 @@ public class HomeController {
         return "login";
     }
 
-    @RequestMapping(value = "/welcome", method = RequestMethod.GET)
-    public String showWelcomePage() {
-        return "welcome";
-    }
 
 }
