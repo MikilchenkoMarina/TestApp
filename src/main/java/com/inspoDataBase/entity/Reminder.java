@@ -3,7 +3,6 @@ package com.inspoDataBase.entity;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
-import javax.validation.constraints.Size;
 
 /**
  * Created by mmikilchenko on 15.02.2017.
@@ -27,16 +26,16 @@ public class Reminder {
     private String text;
 
     @Basic
-    @Column(name = "THEME_ID", length = 45)
-    @NotEmpty( message = "{NotEmpty.reminder.theme}  ")
-    private String themeId;
+    @Column(name = "IMAGELINK", length = 200)
+    //@NotEmpty( message = "{NotEmpty.reminder.theme}  ")
+    private String imageLink;
 
     public Reminder() {
     }
 
-    public Reminder(String text, String themeId, User user) {
+    public Reminder(String text, String imageLink, User user) {
         this.text = text;
-        this.themeId = themeId;
+        this.imageLink = imageLink;
         this.user = user;
     }
 
@@ -64,12 +63,12 @@ public class Reminder {
         this.text = reminderText;
     }
 
-    public String getThemeId() {
-        return themeId;
+    public String getImageLink() {
+        return imageLink;
     }
 
-    public void setThemeId(String themeId) {
-        this.themeId = themeId;
+    public void setImageLink(String themeId) {
+        this.imageLink = themeId;
     }
 
 
@@ -78,7 +77,7 @@ public class Reminder {
         return "Reminder{" +
                 "reminderId=" + reminderId +
                 ", reminderText='" + text + '\'' +
-                ", themeId='" + themeId + '\'' +
+                ", imageLink='" + imageLink + '\'' +
                 '}';
     }
 }

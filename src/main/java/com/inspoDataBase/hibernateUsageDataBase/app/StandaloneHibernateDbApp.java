@@ -54,7 +54,7 @@ public class StandaloneHibernateDbApp {
 
     public static void printRemindersByUserId(ReminderDao reminderDao, int userId) {
         for (Reminder userReminder : reminderDao.showRemindersByUserId(userId)) {
-            System.out.println(" THEME :  " + userReminder.getThemeId() + " Reminder text : " + userReminder.getText());
+            System.out.println(" THEME :  " + userReminder.getImageLink() + " Reminder text : " + userReminder.getText());
         }
     }
 
