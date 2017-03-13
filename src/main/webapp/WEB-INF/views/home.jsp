@@ -8,9 +8,11 @@
 <html lang="en">
 <head>
     <link href="<c:url value="/resources/css/myCustom.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/bootstrap2.css" />" rel="stylesheet">
 </head>
 
 <body>
+
 
 <div class="container">
     <c:choose>
@@ -21,7 +23,8 @@
             <h1> Welcome , ${pageContext.request.userPrincipal.name} your login is correct ! </h1>
             <div class="form-style-7">
                 <h2>
-                    <a href="<c:url value="user/${pageContext.request.userPrincipal.name}"/>"> Go to profile </a>
+                    <a href="<c:url value="user/${pageContext.request.userPrincipal.name}"/>"> Go to
+                        profile </a>
                 </h2>
             </div>
         </c:when>
@@ -38,7 +41,7 @@
     </c:choose>
 </div>
 
-<!-- /container -->
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 </body>

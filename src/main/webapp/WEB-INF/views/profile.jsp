@@ -7,49 +7,86 @@
 <html>
 <head>
     <link href="<c:url value="/resources/css/myCustom.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/bootstrap2.css" />" rel="stylesheet">
 </head>
 
 <body>
 
 <h1><s:message code="inspominder.userProfile"/></h1>
+<%--account info panel--%>
+<div class="col-md-4">
+    <div class="bs-component">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Account info</h3>
+            </div>
+            <div class="panel-body">
+                <label><s:message code="inspominder.firstName"/> : </label> ${user.firstName} <br/>
+                <label><s:message code="inspominder.lastName"/> : </label> ${user.lastName} <br/>
+                <label><s:message code="inspominder.userName"/> : </label> ${user.userName} <br/>
+                <label><s:message code="inspominder.password"/> : </label> ${user.password} <br/>
 
-<div id="column-1">
-    <h2><s:message code="inspominder.firstName"/> : </h2> ${user.firstName} <br/>
-    <h2><s:message code="inspominder.lastName"/> : </h2> ${user.lastName} <br/>
-    <h2><s:message code="inspominder.userName"/> : </h2> ${user.userName} <br/>
-    <h2><s:message code="inspominder.password"/> : </h2> ${user.password} <br/>
-
+            </div>
+        </div>
+    </div>
 </div>
 
-<div id="column-2">
-    <h3><s:message code="inspominder.Reminders"/></h3></br>
-    <a href="<c:url value="${user.userId}"/>/reminders"> Reminders List</a>
-    <ol>
-        <c:forEach var="reminder" items="${reminderList}">
-            <li>
-                <div><c:out value="${reminder.themeId}"/> : <c:out value="${reminder.text}"/></div>
-            </li>
-        </c:forEach>
-    </ol>
-
+<%--reminders list panel--%>
+<div class="col-md-4">
+    <div class="bs-component">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title"><s:message code="inspominder.Reminders"/></h3>
+            </div>
+            <div class="panel-body">
+                <div class="scroll">
+                    <h2><a href="<c:url value="${user.userId}"/>/reminders"> Open Reminders List</a></h2>
+                    <ol>
+                        <c:forEach var="reminder" items="${reminderList}">
+                            <li class="list-group-item">
+                                <div class="lead"><c:out value="${reminder.text}"/></div>
+                                </br>
+                                <img id="reminder-image" src="<c:url value="${reminder.imageLink}"/>"/>
+                            </li>
+                        </c:forEach>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div id="column-3">
-    <springForm:form method="POST" commandName="reminder" cssClass="form-style-7">
-        <ul>
-            <li>
-                <springForm:label path="text"> <s:message code="inspominder.text"/> </springForm:label>
-                <springForm:input path="text" cssErrorClass="error"/>
-                <springForm:errors path="text" cssClass="error"/>
-            </li>
 
-            <li>
-                <springForm:label path="themeId"><s:message code="inspominder.theme"/></springForm:label>
-                <springForm:input path="themeId" cssErrorClass="error"/>
-                <springForm:errors path="themeId" cssClass="error"/>
-            </li>
-        </ul>
-        <springForm:button> <s:message code="inspominder.addReminder"/> </springForm:button>
-    </springForm:form>
+<%--add reminder Form panel--%>
+<div class="col-md-4" <%--id="column-3"--%>>
+    <div class="bs-component">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Add Reminder</h3>
+            </div>
+            <div class="panel-body">
+
+                <springForm:form method="POST" commandName="reminder" enctype="multipart/form-data"  cssClass="form-style-7">
+                    <ul>
+                        <li>
+                            <springForm:label path="text"> <s:message code="inspominder.text"/> </springForm:label>
+                            <springForm:input path="text" cssErrorClass="error"/>
+                            <springForm:errors path="text" cssClass="error"/>
+                        </li>
+                        <li>
+                            <springForm:label path="imageLink"><s:message code="inspominder.theme"/></springForm:label>
+                            <input type="file" name="user-file"/>
+                        </li>
+                    </ul>
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                    <springForm:button class="btn btn-primary"> <s:message code="inspominder.addReminder"/>
+                    </springForm:button>
+                </springForm:form>
+
+                <%--  /panel-body    --%>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 </body>

@@ -19,8 +19,9 @@
     <ol>
         <c:forEach var="reminder" items="${reminderList}">
             <li>
-                <div><c:out value="${reminder.reminderId}"/>:<c:out value="${reminder.themeId}"/> : <c:out
-                        value="${reminder.text}"/></div>
+                <div><c:out value="${reminder.reminderId}"/>
+                    <img src="<c:url value="${reminder.imageLink}"/>"/>
+                    <c:out value="${reminder.text}"/></div>
                 <a href="<c:url value="reminders/${reminder.reminderId}"/>"> Delete Reminder</a>
             </li>
         </c:forEach>

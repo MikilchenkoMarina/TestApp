@@ -47,8 +47,8 @@ public class ReminderController {
         return "reminder";
     }
 
-    @RequestMapping(value = "/{reminderId}", method ={ RequestMethod.DELETE})
-   //ResponseStatus(HttpStatus.NO_CONTENT)
+    @RequestMapping(value = "/{reminderId}", method ={RequestMethod.DELETE})
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public String deleteReminder(@PathVariable Integer reminderId) {
         reminderService.deleteReminderById(reminderId);
         return "redirect:/user/{id}/reminders";

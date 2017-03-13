@@ -14,10 +14,10 @@
 <link href="<c:url value="/resources/css/myCustom.css" />" rel="stylesheet">
 
 <div id="column-2">
-    <springForm:form method="delete"  modelAttribute="reminder"    cssClass="form-style-7">
+    <springForm:form method="delete" modelAttribute="reminder" cssClass="form-style-7">
         <input type="hidden" name="_method" value="DELETE"/>
-        ${reminder.reminderId}  </br>
-        ${reminder.themeId} </br>
+        ${reminder.reminderId}
+        <img src="<c:url value="${reminder.imageLink}"/>"/>
         ${reminder.text} </br>
 
         <h2>Are you sure You want Delete this reminder ?</h2>

@@ -30,7 +30,7 @@ public class FileUploadUtil {
         String END_POINT_URL = "https://s3.eu-central-1.amazonaws.com";// e.g http://s3.amazonaws.com
 
         String BUCKET = "inspominderbucket";
-        // String IMAGE_LOCATION = "/userName/";
+        String IMAGE_LOCATION = userName;
         String S3_CACHE = "xxx"; // e.g 60
         String fileName = System.currentTimeMillis() + "_" + multipartFile.getOriginalFilename();
         try {
@@ -49,7 +49,7 @@ public class FileUploadUtil {
             InputStream stream = multipartFile.getInputStream();
 
             ObjectMetadata objectMetadata = new ObjectMetadata();
-            PutObjectRequest putObjectRequest = new PutObjectRequest(BUCKET,/* IMAGE_LOCATION +*/ fileName, stream, objectMetadata);
+            PutObjectRequest putObjectRequest = new PutObjectRequest(BUCKET, /*IMAGE_LOCATION + "/"+*/  fileName, stream, objectMetadata);
 
             //skip if do not want to access the image directly from S3
             putObjectRequest.setCannedAcl(CannedAccessControlList.PublicRead);
@@ -59,7 +59,7 @@ public class FileUploadUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return END_POINT_URL + "/" + fileName;
+        return END_POINT_URL + "/"+BUCKET+"/" /*+ IMAGE_LOCATION + "/"*/ + fileName;
     }
 
     public void saveFiletoLocalStorage(MultipartFile multipartFile) {
