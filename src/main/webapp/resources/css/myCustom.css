@@ -47,6 +47,8 @@ body {
 .panel-body div.scroll {
     max-height: 600px;
     overflow-y: scroll;
+    padding-top: 10px;
+    margin-top: 10px;
 }
 
 .custom-counter {

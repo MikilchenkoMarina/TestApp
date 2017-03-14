@@ -7,6 +7,7 @@
     <title>Inspominder</title>
     <link href="<c:url value="/resources/css/myCustom.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/css/bootstrap2.css" />" rel="stylesheet">
+    <div class="page-header" align="center"><h1><s:message code="inspominder.remindersPage"/></h1></div>
 </head>
 
 <body>
@@ -14,16 +15,22 @@
 <div class="col-md-4 col-md-offset-4" <%--id="column-3"--%>>
     <div class="bs-component">
         <div class="panel panel-primary">
-            <div class="panel-heading">
-                <%--       // <h3 class="panel-title">Add Reminder</h3>--%>
-            </div>
             <div class="panel-body">
                 <springForm:form method="delete" modelAttribute="reminder" cssClass="form-style-7">
                     <input type="hidden" name="_method" value="DELETE"/>
-                    <img src="<c:url value="${reminder.imageLink}"/>"/></br>
-                    <h4 class="text-primary"> ${reminder.text} </h4>
-                    <h2>Are you sure You want Delete this reminder ?</h2>
-                    <springForm:button class="btn btn-primary btn-offset-primary"> Delete </springForm:button>
+
+                    <div class="media-body">
+                        <div class="snippet">
+                            <a class="pull-left"> <img src="<c:url value="${reminder.imageLink}"/>"/> </a>
+                            <p><h4><c:out value="${reminder.text}"/></h4></p>
+                        </div>
+                    </div>
+                    <div class="alert alert-dismissible alert-danger">
+                        <s:message code="inspominder.areYouSureDelete"/>
+                    </div>
+                    <springForm:button class="btn btn-primary btn-offset-primary">
+                        <s:message code="inspominder.delete"/>
+                    </springForm:button>
                 </springForm:form>
             </div>
         </div>

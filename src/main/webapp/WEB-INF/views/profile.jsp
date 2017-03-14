@@ -8,24 +8,21 @@
 <head>
     <link href="<c:url value="/resources/css/myCustom.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/css/bootstrap2.css" />" rel="stylesheet">
+    <div class="page-header" align="center"><h1><s:message code="inspominder.userProfile"/></h1></div>
 </head>
 
 <body>
-
-<h1><s:message code="inspominder.userProfile"/></h1>
 <%--account info panel--%>
 <div class="col-md-4">
     <div class="bs-component">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h3 class="panel-title">Account info</h3>
+                <h3 class="panel-title"><s:message code="inspominder.accountInfo"/></h3>
             </div>
             <div class="panel-body">
                 <label><s:message code="inspominder.firstName"/> : </label> ${user.firstName} <br/>
                 <label><s:message code="inspominder.lastName"/> : </label> ${user.lastName} <br/>
                 <label><s:message code="inspominder.userName"/> : </label> ${user.userName} <br/>
-                <label><s:message code="inspominder.password"/> : </label> ${user.password} <br/>
-
             </div>
         </div>
     </div>
@@ -39,13 +36,18 @@
                 <h3 class="panel-title"><s:message code="inspominder.Reminders"/></h3>
             </div>
             <div class="panel-body">
+                <a class="btn btn-primary" href="<c:url value="${user.userName}"/>/reminders"> <s:message
+                        code="inspominder.openRemindersPage"/></a></br>
                 <div class="scroll">
-                    <h2><a href="<c:url value="${user.userId}"/>/reminders"> Open Reminders List</a></h2>
                     <ol class="custom-counter">
                         <c:forEach var="reminder" items="${reminderList}">
-                            <li class="list-group-item">
-                                <img id="reminder-image" src="<c:url value="${reminder.imageLink}"/>"/>
-                                <h4 class="text-primary"><c:out value="${reminder.text}"/></h4>
+                            <li>
+                                <div class="media-body">
+                                    <div class="snippet">
+                                        <a class="pull-left"> <img src="<c:url value="${reminder.imageLink}"/>"/> </a>
+                                        <p><h4><c:out value="${reminder.text}"/></h4></p>
+                                    </div>
+                                </div>
                             </li>
                         </c:forEach>
                     </ol>
@@ -56,11 +58,11 @@
 </div>
 
 <%--add reminder Form panel--%>
-<div class="col-md-4" <%--id="column-3"--%>>
+<div class="col-md-4">
     <div class="bs-component">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h3 class="panel-title">Add Reminder</h3>
+                <h3 class="panel-title"><s:message code="inspominder.addReminder"/></h3>
             </div>
             <div class="panel-body">
 
@@ -73,22 +75,18 @@
                             <springForm:errors path="text" cssClass="error"/>
                         </li>
                         <li>
-                            <springForm:label path="imageLink"><s:message code="inspominder.theme"/></springForm:label>
+                            <springForm:label path="imageLink"><s:message code="inspominder.image"/></springForm:label>
                             <input type="file" name="user-file"/>
                         </li>
                     </ul>
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                    <springForm:button class="btn btn-primary"> <s:message code="inspominder.addReminder"/>
+                    <springForm:button class="btn btn-primary"> <s:message code="inspominder.save"/>
                     </springForm:button>
                 </springForm:form>
-
-                <%--  /panel-body    --%>
             </div>
         </div>
     </div>
-
 </div>
 
 </body>
-
 </html>

@@ -16,7 +16,7 @@ import java.util.List;
  * @author mmikilchenko on 27.02.2017.
  */
 @Controller
-@RequestMapping(value = "/user/{id}/reminders")
+@RequestMapping(value = "/user/{userName}/reminders")
 public class ReminderController {
     private UserService userService;
     private ReminderService reminderService;
@@ -31,8 +31,8 @@ public class ReminderController {
 
 
     @RequestMapping(method = RequestMethod.GET)
-    public String showUserReminders(@PathVariable Integer id, Model model) {
-        User user = userService.findUserByUserId(id);
+    public String showUserReminders(@PathVariable String userName, Model model) {
+        User user = userService.findUserByUsername(userName);
         List<Reminder> userReminders = reminderService.findReminderByUser(user);
         model.addAttribute("user", user);
         model.addAttribute("reminderList", userReminders);
@@ -48,10 +48,10 @@ public class ReminderController {
     }
 
     @RequestMapping(value = "/{reminderId}", method ={RequestMethod.DELETE})
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+    //@ResponseStatus(HttpStatus.NO_CONTENT)
     public String deleteReminder(@PathVariable Integer reminderId) {
         reminderService.deleteReminderById(reminderId);
-        return "redirect:/user/{id}/reminders";
+        return "redirect:/user/{userName}/reminders";
     }
 
 

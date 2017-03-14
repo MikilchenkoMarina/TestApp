@@ -7,23 +7,21 @@
     <title>Inspominder</title>
     <link href="<c:url value="/resources/css/myCustom.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/css/bootstrap2.css" />" rel="stylesheet">
+    <div class="page-header" align="center"><h1><s:message code="inspominder.remindersPage"/></h1></div>
 </head>
 <body>
 
-<div class="col-md-4">
+<div class="col-md-8">
     <div class="bs-component">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h1 class="lead"><s:message code="inspominder.Reminders"/></h1>
+                <s:message code="inspominder.Reminders"/>
             </div>
             <div class="panel-body">
                 <div class="scroll">
                     <ol class="custom-counter">
                         <c:forEach var="reminder" items="${reminderList}">
-
                             <li>
-
-
                                 <div class="media-body">
                                     <div class="snippet">
                                         <a class="pull-left"> <img src="<c:url value="${reminder.imageLink}"/>"/> </a>
@@ -31,12 +29,11 @@
                                     </div>
                                 </div>
                                 <a class="btn btn-primary" href="<c:url value="reminders/${reminder.reminderId}"/>">
-                                    Delete this reminder </a>
+                                    <s:message code="inspominder.deleteThisReminder"/> </a>
                             </li>
                         </c:forEach>
                     </ol>
                 </div>
-                <%--/!scroll--%>
             </div>
         </div>
     </div>

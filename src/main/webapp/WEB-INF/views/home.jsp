@@ -9,38 +9,34 @@
 <head>
     <link href="<c:url value="/resources/css/myCustom.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/css/bootstrap2.css" />" rel="stylesheet">
+    <div class="page-header" align="center"><h1><s:message code="inspominder.homepage"/></h1></div>
+
 </head>
 
 <body>
 
+<div class="col-md-4 col-md-offset-4">
 
-<div class="container">
     <c:choose>
         <c:when test="${pageContext.request.userPrincipal.name != null}">
             <form id="logoutForm" method="POST" action="${contextPath}/logout">
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             </form>
-            <h1> Welcome , ${pageContext.request.userPrincipal.name} your login is correct ! </h1>
-            <div class="form-style-7">
-                <h2>
-                    <a href="<c:url value="user/${pageContext.request.userPrincipal.name}"/>"> Go to
-                        profile </a>
-                </h2>
+            <div class="alert alert-dismissible alert-success">
+                <spring:message code="inspominder.welcome"/> ${pageContext.request.userPrincipal.name}
+                <spring:message code="inspominder.openProfileAnCreateReminder"/>
+                <a class="btn-primary btn-lg" href="<c:url value="user/${pageContext.request.userPrincipal.name}"/>">
+                <spring:message code="inspominder.goToProfile"/></a>
             </div>
         </c:when>
         <c:otherwise>
-            <h1><s:message code="inspominder.welcome"/></h1>
-            <div class="form-style-7">
-                <h2>
-                    <a href="<c:url value="/register"/>"><s:message code="inspominder.register"/> </a>
-                    |
-                    <a href="<c:url value="/login"/>"><s:message code="inspominder.login"/> </a>
-                </h2>
-            </div>
+            <h2 class="text-primary"><s:message code="inspominder.welcome"/></h2>
         </c:otherwise>
     </c:choose>
 </div>
-
+<div class="row">
+    <%@include file="/resources/html/carousel.html" %>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
