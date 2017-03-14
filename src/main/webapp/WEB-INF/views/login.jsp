@@ -6,7 +6,7 @@
 <html>
 <head>
     <link href="<c:url value="/resources/css/myCustom.css" />" rel="stylesheet">
-    <link href="<c:url value="/resources/css/myCustom.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/bootstrap2.css" />" rel="stylesheet">
     <h1><s:message code="inspominder.login"/></h1>
 </head>
 
@@ -17,7 +17,7 @@
     <div class="bs-component">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h3 class="panel-title">Add Reminder</h3>
+        <%--       // <h3 class="panel-title">Add Reminder</h3>--%>
             </div>
             <div class="panel-body">
                 <%--   // <div class="container">--%>
@@ -38,7 +38,7 @@
                             </li>
                         </ul>
 
-                        <button class="form-style-7" type="submit"><s:message code="inspominder.login"/></button>
+                        <button class="btn btn-primary" type="submit"><s:message code="inspominder.login"/></button>
 
                         <h4 class="text-center"><a href="register"><s:message code="inspominder.register"/></a></h4>
                     </div>

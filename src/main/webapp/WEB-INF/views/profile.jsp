@@ -41,12 +41,11 @@
             <div class="panel-body">
                 <div class="scroll">
                     <h2><a href="<c:url value="${user.userId}"/>/reminders"> Open Reminders List</a></h2>
-                    <ol>
+                    <ol class="custom-counter">
                         <c:forEach var="reminder" items="${reminderList}">
                             <li class="list-group-item">
-                                <div class="lead"><c:out value="${reminder.text}"/></div>
-                                </br>
                                 <img id="reminder-image" src="<c:url value="${reminder.imageLink}"/>"/>
+                                <h4 class="text-primary"><c:out value="${reminder.text}"/></h4>
                             </li>
                         </c:forEach>
                     </ol>
@@ -65,7 +64,8 @@
             </div>
             <div class="panel-body">
 
-                <springForm:form method="POST" commandName="reminder" enctype="multipart/form-data"  cssClass="form-style-7">
+                <springForm:form method="POST" commandName="reminder" enctype="multipart/form-data"
+                                 cssClass="form-style-7">
                     <ul>
                         <li>
                             <springForm:label path="text"> <s:message code="inspominder.text"/> </springForm:label>

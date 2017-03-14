@@ -6,13 +6,13 @@
 <head>
     <title>Inspominder</title>
     <link href="<c:url value="/resources/css/myCustom.css" />" rel="stylesheet">
-    <link href="<c:url value="/resources/css/myCustom.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/bootstrap2.css" />" rel="stylesheet">
 </head>
 
 <body>
 <h1><s:message code="inspominder.register"/></h1></br>
 
-<div class="col-md-4" <%--id="column-3"--%>>
+<div class="col-md-4 col-md-offset-4">
     <div class="bs-component">
         <div class="panel panel-primary">
             <div class="panel-heading">
@@ -48,7 +48,7 @@
                             <springForm:errors path="password" cssClass="error"/>
                         </li>
                     </ul>
-                    <springForm:button> <s:message code="inspominder.register"/></springForm:button>
+                    <springForm:button class="btn btn-primary"> <s:message code="inspominder.register"/></springForm:button>
                 </springForm:form>
 
                 <%--  /panel-body    --%>

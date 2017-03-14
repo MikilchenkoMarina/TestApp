@@ -5,31 +5,41 @@
 <html>
 <head>
     <title>Inspominder</title>
+    <link href="<c:url value="/resources/css/myCustom.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/bootstrap2.css" />" rel="stylesheet">
 </head>
-
 <body>
 
-<h1><s:message code="inspominder.userProfile"/></h1>
+<div class="col-md-4">
+    <div class="bs-component">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h1 class="lead"><s:message code="inspominder.Reminders"/></h1>
+            </div>
+            <div class="panel-body">
+                <div class="scroll">
+                    <ol class="custom-counter">
+                        <c:forEach var="reminder" items="${reminderList}">
 
-<link href="<c:url value="/resources/css/myCustom.css" />" rel="stylesheet">
-
-<div id="column-2">
-    <h3><s:message code="inspominder.Reminders"/></h3></br>
-
-    <ol>
-        <c:forEach var="reminder" items="${reminderList}">
-            <li>
-                <div><c:out value="${reminder.reminderId}"/>
-                    <img src="<c:url value="${reminder.imageLink}"/>"/>
-                    <c:out value="${reminder.text}"/></div>
-                <a href="<c:url value="reminders/${reminder.reminderId}"/>"> Delete Reminder</a>
-            </li>
-        </c:forEach>
-    </ol>
+                            <li>
 
 
+                                <div class="media-body">
+                                    <div class="snippet">
+                                        <a class="pull-left"> <img src="<c:url value="${reminder.imageLink}"/>"/> </a>
+                                        <p><h4><c:out value="${reminder.text}"/></h4></p>
+                                    </div>
+                                </div>
+                                <a class="btn btn-primary" href="<c:url value="reminders/${reminder.reminderId}"/>">
+                                    Delete this reminder </a>
+                            </li>
+                        </c:forEach>
+                    </ol>
+                </div>
+                <%--/!scroll--%>
+            </div>
+        </div>
+    </div>
 </div>
-
 </body>
-
 </html>
