@@ -13,18 +13,17 @@
 <body>
 <div align="center">
     <h1>Spring MVC - Hibernate File Upload to Database Demo</h1>
-    <springForm:form method="post" commandName="uploadFile"  enctype="multipart/form-data">
-        <table border="0">
-            <tr>
-                <td>Pick file #1:</td>
-                <td><input type="file" name="fileUpload" size="50" /></td>
-            </tr>
-          <input type="file" name="fileUpload" size="50" /></td>
-            </tr>
-            <tr>
-                <td colspan="2" align="center"><input type="submit" value="Upload" /></td>
-            </tr>
-        </table>
+
+    <a href="<c:url value="/" />">
+        <img src="<c:url value="/https://s3.eu-central-1.amazonaws.com/inspominderbucket/1489410427596_idea-512.png"/>" border="0"/>
+    </a>
+    <springForm:form method="post" action="upload" enctype="multipart/form-data">
+        Upload file :
+        <input type="file" name="user-file"/>
+
+        <input type="submit" value="Upload"/>
+
+
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     </springForm:form>
 </div>

@@ -4,6 +4,7 @@ import com.inspoDataBase.entity.Reminder;
 import com.inspoDataBase.entity.User;
 import com.inspoDataBase.jpaUsageDataBase.service.ReminderService;
 import com.inspoDataBase.jpaUsageDataBase.service.UserService;
+import com.inspoweb.utils.FileUploadUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -12,9 +13,12 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.swing.*;
 import javax.validation.Valid;
+import java.io.IOException;
 import java.util.List;
 
 
@@ -27,6 +31,9 @@ public class UserController {
 
     private UserService userService;
     private ReminderService reminderService;
+
+    @Autowired
+    private FileUploadUtil fileUploadUtil;
 
 
     @Autowired
@@ -48,9 +55,18 @@ public class UserController {
     }
 
     @RequestMapping(value = "/{userName}", method = RequestMethod.POST)
-    public String addReminderOnUserProfile(@PathVariable String userName, @Valid Reminder reminder, BindingResult resul) {
+    public String addReminderOnUserProfile(@PathVariable String userName, @RequestParam("user-file") MultipartFile multipartFile, @Valid Reminder reminder, BindingResult resul) {
 
         User user = userService.findUserByUsername(userName);
+        if (!multipartFile.isEmpty()) {
+
+            try {
+                String amazonS3ImageUrl = fileUploadUtil.saveImageToAmazonS3(multipartFile, userName);
+                reminder.setImageLink(amazonS3ImageUrl);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         if (!resul.hasErrors()) {
             reminderService.addReminder(reminder, user);
         } else {

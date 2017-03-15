@@ -31,69 +31,53 @@ body {
     bottom: 0;
 }
 
-#column-1 {
-    width: 20%;
-    height: 300px;
-    background: #fff9ff;
-    float: left;
-    padding: 20px;
-    margin-left: 15px;
-    border-radius: 5px;
-    border: 2px solid #0b6e9a;
+.snippet {
+    width: auto;
+}
+
+.snippet img {
+    width: 200px;
+    height: auto;
+    float: right;
+    margin: 0px 10px 10px 0px;
+    border: 2px solid #e95420;
     border-radius: 5px;
 }
 
-#column-2 {
-    width: 35%;
-    height: 300px;
+.panel-body div.scroll {
+    max-height: 600px;
     overflow-y: scroll;
-    background: #fff9ff;
-    float: left;
-    padding: 20px;
-    margin-left: 15px;
-    border: 2px solid #0b6e9a;
-    border-radius: 5px;
+    padding-top: 10px;
+    margin-top: 10px;
 }
 
-#column-3 {
-    width: 30%;
-    height: 300px;
-    background: #fff9ff;
-    float: left;
-    padding: 20px;
-    margin-left: 15px;
-    border: 2px solid #0b6e9a;
-    border-radius: 5px;
+.custom-counter {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
-h1 {
+.custom-counter li {
+    counter-increment: step-counter;
+    margin-bottom: 10px;
+}
+
+.custom-counter li::before {
+    content: counter(step-counter);
+    margin-right: 5px;
+    font-size: 80%;
+    background-color: rgb(233, 84, 32);
+    color: white;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+
+h1, h2, h3 {
+    color: #e95420;
     text-align: center;
     font-weight: bold;
-    color: #0a3349;
-    font-size: 200%;
     font-family: Georgia, "Times New Roman", Times, serif
-}
-
-h2 {
-    text-align: center;
-    font-weight: bold;
-    font-size: 100%;
-    color: #0a3349;
-    font-family: Georgia, "Times New Roman", Times, serif
-
-}
-
-a {
-    text-decoration: none;
-    font-weight: bold;
-    text-align: right;
-    color: #0a3349;
-    font-family: Georgia, "Times New Roman", Times, serif
-}
-
-a:hover {
-    text-decoration: underline;
-    color: #0b6e9a;
 }
 
 .form-style-7 {
@@ -124,7 +108,7 @@ a:hover {
     float: left;
     margin-top: -19px;
     background: #FFFFFF;
-    height: 14px;
+    height: 20px;
     padding: 2px 5px 2px 5px;
     color: #B9B9B9;
     font-size: 14px;
@@ -189,20 +173,6 @@ a:hover {
 
 .form-style-7 input.error {
     background-color: #f0b6c3;
-}
-
-.form-style-7 button {
-    background: rgba(0, 0, 90, 0.85);
-    border: none;
-    padding: 10px 20px 10px 20px;
-    border-bottom: 3px solid rgba(25, 25, 25, 0.81);
-    border-radius: 3px;
-    color: #fff;
-}
-
-.form-style-7 button:hover {
-    background: #0000aa;
-    color: #fff;
 }
 
 div.form-style-7 div.top-right-block {
