@@ -1,55 +1,47 @@
 package com.inspoweb.utils.schedule;
 
 import com.inspoDataBase.entity.Reminder;
-import com.inspoDataBase.entity.User;
-import com.inspoDataBase.jpaUsageDataBase.service.ReminderService;
+import net.coobird.thumbnailator.Thumbnails;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.util.List;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import java.util.TimerTask;
 
 /**
  * @author mmikilchenko on 15.03.2017.
  */
 public class ReminderTimerTask extends TimerTask {
-    @Autowired
-    private ReminderService reminderService;
-    private User user;
-
+    private Reminder reminder;
 
     @Autowired
-    public ReminderTimerTask(User user) {
-        this.user = user;
+    public ReminderTimerTask(Reminder reminder) {
+        this.reminder = reminder;
     }
-
 
     @Override
     public void run() {
-
-        List<Reminder> userReminders = reminderService.findReminderByUser(user);
-
-        for (Reminder reminder : userReminders) {
+        try {
             showReminderMessage(reminder);
-
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
         }
-
     }
 
-    public void showReminderMessage(Reminder reminder) {
-
-        JOptionPane pane = new JOptionPane();
-        pane.requestFocusInWindow();
-        pane.requestFocus();
-
-        final JDialog d = pane.createDialog((JFrame) null, reminder.getText());
-        d.requestFocusInWindow();
-        d.setFocusable(true);
-        d.setLocation(20, 20);
-        d.setSize(200, 200);
-        d.setVisible(true);
-
+    public void showReminderMessage(Reminder reminder) throws MalformedURLException {
+        JOptionPane jOptionPane = new JOptionPane();
+        try {
+            BufferedImage img = ImageIO.read(new URL(reminder.getImageLink()));
+            ImageIcon icon = new ImageIcon(Thumbnails.of(img).forceSize(300, 300).asBufferedImage());
+            jOptionPane.showMessageDialog(null, reminder.getText(), "Reminder", JOptionPane.DEFAULT_OPTION, icon);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-
 
 }

@@ -47,11 +47,7 @@ public class UserController {
 
 
     @RequestMapping(value = "/{userName}", method = RequestMethod.GET)
-    public String showUserProfileByUserName(@PathVariable String userName, Model model, Authentication authentication) {
-
-        User userTrue = userService.findUserByUsername(authentication.getName());
-        ReminderTimer reminderTimer = new ReminderTimer(userTrue);
-        reminderTimer.run();
+    public String showUserProfileByUserName(@PathVariable String userName, Model model) {
 
 
         User user = userService.findUserByUsername(userName);
@@ -62,7 +58,7 @@ public class UserController {
         return "profile";
     }
 
-    @RequestMapping(value = "/{userName}", method = RequestMethod.POST)
+    @RequestMapping(value = "/{userName}", params = "action1", method = RequestMethod.POST)
     public String addReminderOnUserProfile(@PathVariable String userName, @RequestParam("user-file") MultipartFile multipartFile, @Valid Reminder reminder, BindingResult resul) {
 
         User user = userService.findUserByUsername(userName);
@@ -79,9 +75,6 @@ public class UserController {
             reminderService.addReminder(reminder, user);
         } else {
             JOptionPane pane = new JOptionPane();
-         /*   pane.requestFocusInWindow();
-            pane.requestFocus();*/
-
             final JDialog d = pane.createDialog((JFrame) null, "Title");
             d.requestFocusInWindow();
             d.setFocusable(true);
@@ -91,6 +84,20 @@ public class UserController {
         }
         return "redirect:/user/{userName}";
 
+    }
+
+    @RequestMapping(value = "/{userName}", params = "action2", method = RequestMethod.POST)
+    public String action2(@PathVariable String userName, Authentication authentication) {
+
+        User userTrue = userService.findUserByUsername(authentication.getName());
+        ReminderTimer reminderTimer = new ReminderTimer(userTrue, reminderService);
+        try {
+            reminderTimer.run();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return "redirect:/user/{userName}";
     }
 
 }

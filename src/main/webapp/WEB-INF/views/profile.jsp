@@ -80,8 +80,11 @@
                         </li>
                     </ul>
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                    <springForm:button class="btn btn-primary"> <s:message code="inspominder.save"/>
+                    <springForm:button name="action1 " class="btn btn-primary"> <s:message code="inspominder.save"/>
                     </springForm:button>
+
+                    <springForm:button name="action2 " class="btn btn-primary"> Run Reminders </springForm:button>
+
                 </springForm:form>
             </div>
         </div>
