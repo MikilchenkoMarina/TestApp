@@ -5,7 +5,9 @@ import com.inspoDataBase.entity.User;
 import com.inspoDataBase.jpaUsageDataBase.service.ReminderService;
 import com.inspoDataBase.jpaUsageDataBase.service.UserService;
 import com.inspoweb.utils.FileUploadUtil;
+import com.inspoweb.utils.schedule.ReminderTimer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.ui.Model;
@@ -45,7 +47,13 @@ public class UserController {
 
 
     @RequestMapping(value = "/{userName}", method = RequestMethod.GET)
-    public String showUserProfileByUserName(@PathVariable String userName, Model model) {
+    public String showUserProfileByUserName(@PathVariable String userName, Model model, Authentication authentication) {
+
+        User userTrue = userService.findUserByUsername(authentication.getName());
+        ReminderTimer reminderTimer = new ReminderTimer(userTrue);
+        reminderTimer.run();
+
+
         User user = userService.findUserByUsername(userName);
         List<Reminder> userReminders = reminderService.findReminderByUser(user);
         model.addAttribute("user", user);
@@ -71,12 +79,13 @@ public class UserController {
             reminderService.addReminder(reminder, user);
         } else {
             JOptionPane pane = new JOptionPane();
-            pane.requestFocusInWindow();
-            pane.requestFocus();
+         /*   pane.requestFocusInWindow();
+            pane.requestFocus();*/
 
             final JDialog d = pane.createDialog((JFrame) null, "Title");
             d.requestFocusInWindow();
             d.setFocusable(true);
+            d.requestFocus();
             d.setLocation(10, 10);
             d.setVisible(true);
         }

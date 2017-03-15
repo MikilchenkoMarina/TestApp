@@ -22,10 +22,13 @@
             <form id="logoutForm" method="POST" action="${contextPath}/logout">
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             </form>
+<%--            <script>
+                window.location.replace("<c:url value="user/${pageContext.request.userPrincipal.name}"/>");
+            </script>--%>
             <div class="alert alert-dismissible alert-success">
                 <spring:message code="inspominder.welcome"/> ${pageContext.request.userPrincipal.name}
                 <spring:message code="inspominder.openProfileAnCreateReminder"/>
-                <a class="btn-primary btn-lg" href="<c:url value="user/${pageContext.request.userPrincipal.name}"/>">
+                <a class="btn-primary" href="<c:url value="user/${pageContext.request.userPrincipal.name}"/>">
                 <spring:message code="inspominder.goToProfile"/></a>
             </div>
         </c:when>
