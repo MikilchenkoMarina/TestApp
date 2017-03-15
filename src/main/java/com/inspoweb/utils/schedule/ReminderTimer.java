@@ -28,13 +28,14 @@ public class ReminderTimer {
 
         List<Reminder> remindersList = reminderService.findReminderByUser(user);
 
+
+        Timer timer = new Timer(user.getUserName(), true);
         Thread userNotificationThread = getThreadByName((user.getUserName()));
-        Timer timer = new Timer(userNotificationThread.getName(), true);
 
         for (Reminder reminder : remindersList) {
             TimerTask task = new ReminderTimerTask(reminder);
-            timer.schedule(task, TimeUnit.SECONDS.toMillis(10));
-            userNotificationThread.sleep(TimeUnit.SECONDS.toMillis(10));
+            timer.schedule(task,10000);
+            userNotificationThread.sleep(10000);
         }
 
     }
