@@ -27,7 +27,6 @@ public class Reminder {
 
     @Basic
     @Column(name = "IMAGELINK", length = 200)
-    //@NotEmpty( message = "{NotEmpty.reminder.theme}  ")
     private String imageLink;
 
     public Reminder() {

@@ -16,26 +16,31 @@ import java.util.concurrent.TimeUnit;
 public class ReminderTimer {
     private User user;
     private ReminderService reminderService;
+    private int appearingDelay;
 
 
     @Autowired
-    public ReminderTimer(User user, ReminderService reminderService) {
+    public ReminderTimer(User user, ReminderService reminderService, int appearingDelay) {
         this.user = user;
         this.reminderService = reminderService;
+        this.appearingDelay = appearingDelay;
     }
 
     public void run() throws InterruptedException {
 
         List<Reminder> remindersList = reminderService.findReminderByUser(user);
+        Thread userNotificationThread = getThreadByName((user.getUserName()));
 
+        if (userNotificationThread != null) {
+            userNotificationThread.interrupt();
+        }
 
         Timer timer = new Timer(user.getUserName(), true);
-        Thread userNotificationThread = getThreadByName((user.getUserName()));
 
         for (Reminder reminder : remindersList) {
             TimerTask task = new ReminderTimerTask(reminder);
-            timer.schedule(task,10000);
-            userNotificationThread.sleep(10000);
+            timer.schedule(task, 0, 360000);
+            userNotificationThread.sleep(TimeUnit.MINUTES.toMillis(appearingDelay));
         }
 
     }

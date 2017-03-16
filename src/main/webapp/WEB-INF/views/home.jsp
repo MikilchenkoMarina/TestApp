@@ -10,26 +10,17 @@
     <link href="<c:url value="/resources/css/myCustom.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/css/bootstrap2.css" />" rel="stylesheet">
     <div class="page-header" align="center"><h1><s:message code="inspominder.homepage"/></h1></div>
-
 </head>
 
 <body>
-
-<div class="col-md-4 col-md-offset-4">
-
+<div class="col-md-6 col-md-offset-2">
     <c:choose>
         <c:when test="${pageContext.request.userPrincipal.name != null}">
-            <form id="logoutForm" method="POST" action="${contextPath}/logout">
-                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-            </form>
-<%--            <script>
-                window.location.replace("<c:url value="user/${pageContext.request.userPrincipal.name}"/>");
-            </script>--%>
             <div class="alert alert-dismissible alert-success">
                 <spring:message code="inspominder.welcome"/> ${pageContext.request.userPrincipal.name}
                 <spring:message code="inspominder.openProfileAnCreateReminder"/>
                 <a class="btn-primary" href="<c:url value="user/${pageContext.request.userPrincipal.name}"/>">
-                <spring:message code="inspominder.goToProfile"/></a>
+                    <spring:message code="inspominder.goToProfile"/></a>
             </div>
         </c:when>
         <c:otherwise>

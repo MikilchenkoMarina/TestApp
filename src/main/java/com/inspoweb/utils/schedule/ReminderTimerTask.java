@@ -35,6 +35,8 @@ public class ReminderTimerTask extends TimerTask {
 
     public void showReminderMessage(Reminder reminder) throws MalformedURLException {
         JOptionPane jOptionPane = new JOptionPane();
+        jOptionPane.requestFocusInWindow();
+        jOptionPane.requestFocus();
         try {
             BufferedImage img = ImageIO.read(new URL(reminder.getImageLink()));
             ImageIcon icon = new ImageIcon(Thumbnails.of(img).forceSize(300, 300).asBufferedImage());

@@ -38,7 +38,7 @@
                                     Reminders </a>
                             </li>
                             <li>
-                                <a href="/login?logout" onclick=" document.forms['logoutForm'].submit()">
+                                <a onclick=" document.forms['logoutForm'].submit()">
                                     Logout </a>
                             </li>
                         </ul>

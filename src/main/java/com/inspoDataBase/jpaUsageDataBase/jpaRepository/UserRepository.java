@@ -19,7 +19,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     User findByUserId(Integer userId);
 
     @Query("SELECT u FROM User u WHERE LOWER(u.userName) = LOWER(:userName)")
-    List<User> findByUserName(@Param("userName") String userName);
+    User findByUserName(@Param("userName") String userName);
 
     @Query("SELECT u FROM User u WHERE LOWER(u.userName) = LOWER(:userName) AND u.password =:password ")
    List< User> findByUserNameAndPassword(@Param("userName") String userName, @Param("password") String password);
