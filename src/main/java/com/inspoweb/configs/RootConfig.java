@@ -34,9 +34,9 @@ public class RootConfig {
     public DataSource dataSource() {
         DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setDriverClassName("com.mysql.jdbc.Driver");
-        ds.setUrl("jdbc:mysql://localhost:3306/inspominder");
-        ds.setUsername("root");
-        ds.setPassword("admin");
+        ds.setUrl("jdbc:mysql://inspo.cile4todqvuh.us-west-2.rds.amazonaws.com:3306/innodb"/*"jdbc:mysql://localhost:3306/inspominder"*/);
+        ds.setUsername("Maryna"/*"root"*/);
+        ds.setPassword("supermar373737wesdxc"/*"admin"*/);
         Properties props = new Properties();
         props.setProperty("defaultAutoCommit", "true");
         ds.setConnectionProperties(props);
