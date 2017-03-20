@@ -36,7 +36,7 @@ public class JpaSpringConfigs {
     public DataSource dataSource() {
         DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setDriverClassName("org.postgresql.Driver");
-        ds.setUrl("jdbc:postgresql://localhost:3306/inspo.public");
+        ds.setUrl("jdbc:postgresql://localhost:5432/inspo");
         ds.setUsername("postgres");
         ds.setPassword("admin");
         Properties props = new Properties();

@@ -23,9 +23,8 @@ public class StandaloneJpaDbAppTest {
 
         ReminderService reminderService = (ReminderService) context.getBean("reminderService");
         UserService userService = (UserService) context.getBean("userService");
-        DataSource ds = (DataSource) context.getBean("dataSource");
 
-        User testUser = new User(/*1,*/ "Marina", "Mikilchenko", "mikimarerter", "pass", null);
+        User testUser = new User(/*1,*/ "Marina", "Mikilchenko", "postgres111", "pasrthths", null);
         Reminder remFirst = new Reminder("The only source of knowledge is experience.", "Albert Einstein Quotes", testUser);
         Reminder remSecond = new Reminder("Never do anything against conscience even if the state demands it.", "Albert Einstein Quotes", testUser);
 

@@ -23,10 +23,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication()
                 .dataSource(dataSource)
-                .usersByUsernameQuery("select userName, password,true from user where userName = ? ")
-                .authoritiesByUsernameQuery("select userName, 'ROLE_USER' from user where userName = ? ");
-        ;
-
+                .usersByUsernameQuery("select username, password,true from public.user where username = ? ")
+                .authoritiesByUsernameQuery("select username, 'ROLE_USER' from public.user where username = ? ");
 
         auth.inMemoryAuthentication().withUser("admin").password("admin").roles("ADMIN");
 
@@ -42,7 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/resources/**", "/register", "/home").permitAll()
-               // .antMatchers("/user/**").authenticated()
+                .antMatchers("/user/**").authenticated()
                 .anyRequest().permitAll();
 
     }

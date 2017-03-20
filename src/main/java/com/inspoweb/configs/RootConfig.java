@@ -20,7 +20,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-import static org.springframework.orm.jpa.vendor.Database.MYSQL;
 import static org.springframework.orm.jpa.vendor.Database.POSTGRESQL;
 
 /**
@@ -34,8 +33,8 @@ public class RootConfig {
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource ds = new DriverManagerDataSource();
-        ds.setDriverClassName("org.postgresql.Driver")/*"com.mysql.jdbc.Driver")*/;
-        ds.setUrl("jdbc:postgresql://localhost:3306/inspo"/*"jdbc:mysql://inspo.cile4todqvuh.us-west-2.rds.amazonaws.com:3306/innodb"*//*"jdbc:mysql://localhost:3306/inspominder"*/);
+        ds.setDriverClassName("org.postgresql.Driver");
+        ds.setUrl("jdbc:postgresql://localhost:5432/inspo");
         ds.setUsername("postgres");
         ds.setPassword("admin");
         Properties props = new Properties();
@@ -66,9 +65,9 @@ public class RootConfig {
     @Bean
     public JpaVendorAdapter jpaVendorAdapter() {
         HibernateJpaVendorAdapter jpaVendorAdapter = new HibernateJpaVendorAdapter();
-        jpaVendorAdapter.setDatabase(POSTGRESQL/*MYSQL*/);
+        jpaVendorAdapter.setDatabase(POSTGRESQL);
         jpaVendorAdapter.setShowSql(true);
-        jpaVendorAdapter.setDatabasePlatform("org.hibernate.dialect.H2Dialect"/*"org.hibernate.dialect.H2Dialect"*/);
+        jpaVendorAdapter.setDatabasePlatform("org.hibernate.dialect.PostgreSQLDialect");
         jpaVendorAdapter.setGenerateDdl(false);
         return jpaVendorAdapter;
     }
@@ -85,9 +84,6 @@ public class RootConfig {
     public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
         return new PersistenceExceptionTranslationPostProcessor();
     }
-
-
-
 
 
 }

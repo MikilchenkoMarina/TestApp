@@ -8,25 +8,25 @@ import javax.persistence.*;
  * Created by mmikilchenko on 15.02.2017.
  */
 @Entity
-@Table(name = "reminder"/*, schema = "inspominder", catalog = ""*/)
+@Table(name = "public.reminder"/*, schema = "inspominder", catalog = ""*/)
 public class Reminder {
 
     @Id
-    @Column(name = "ID", nullable = false)
+    @Column(name = "id", nullable = false)
     @GeneratedValue(strategy=GenerationType.AUTO)
     private int reminderId;
 
     @ManyToOne(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY)
-    @JoinColumn(name = "USER_ID")
+    @JoinColumn(name = "user_id")
     private User user;
 
     @Basic
-    @Column(name = "TEXT", length = 200)
+    @Column(name = "text", length = 200)
     @NotEmpty( message = "{NotEmpty.reminder.text}  ")
     private String text;
 
     @Basic
-    @Column(name = "IMAGELINK", length = 200)
+    @Column(name = "imagelink", length = 200)
     private String imageLink;
 
     public Reminder() {
