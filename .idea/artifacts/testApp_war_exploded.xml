@@ -131,7 +131,7 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/inspominder-spring-application-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="testApp/web/Web" />
+      <element id="javaee-facet-resources" facet="TestApp/web/Web" />
     </root>
   </artifact>
 </component>

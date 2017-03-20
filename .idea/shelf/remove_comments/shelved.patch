@@ -1,0 +1,45 @@
+Index: src/main/java/com/inspoweb/configs/InspoWebInitializer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/inspoweb/configs/InspoWebInitializer.java	(revision )
++++ src/main/java/com/inspoweb/configs/InspoWebInitializer.java	(revision )
+@@ -0,0 +1,7 @@
++package com.inspoweb.configs;
++
++/**
++ * @author mmikilchenko on 24.02.2017.
++ */
++public class InspoWebInitializer {
++}
+Index: src/main/java/com/inspoweb/configs/WebConfig.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/inspoweb/configs/WebConfig.java	(revision )
++++ src/main/java/com/inspoweb/configs/WebConfig.java	(revision )
+@@ -0,0 +1,7 @@
++package com.inspoweb.configs;
++
++/**
++ * @author mmikilchenko on 24.02.2017.
++ */
++public class WebConfig {
++}
+Index: src/main/java/com/inspoweb/configs/RootConfig.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/inspoweb/configs/RootConfig.java	(revision )
++++ src/main/java/com/inspoweb/configs/RootConfig.java	(revision )
+@@ -0,0 +1,7 @@
++package com.inspoweb.configs;
++
++/**
++ * @author mmikilchenko on 24.02.2017.
++ */
++public class RootConfig {
++}
