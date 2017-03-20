@@ -34,9 +34,9 @@ public class RootConfig {
     public DataSource dataSource() {
         DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setDriverClassName("org.postgresql.Driver");
-        ds.setUrl("jdbc:postgresql://localhost:5432/inspo");
-        ds.setUsername("postgres");
-        ds.setPassword("admin");
+        ds.setUrl("jdbc:postgresql://ec2-176-34-113-15.eu-west-1.compute.amazonaws.com:5432/da8858ppltd1t9");
+        ds.setUsername("titesnurwdpwbh");
+        ds.setPassword("4716852763cf413085fe39c09a6b09c17d02dc3eb88e18b431cf46121bd97f1c");
         Properties props = new Properties();
         props.setProperty("defaultAutoCommit", "true");
         ds.setConnectionProperties(props);
