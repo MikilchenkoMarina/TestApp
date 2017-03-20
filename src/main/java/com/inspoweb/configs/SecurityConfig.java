@@ -23,10 +23,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication()
                 .dataSource(dataSource)
-                .usersByUsernameQuery("select username, password,true from User where username = ? ")
-                .authoritiesByUsernameQuery("select username, 'ROLE_USER' from User where username = ? ");
-        ;
-
+                .usersByUsernameQuery("select username, password,true from public.user where username = ? ")
+                .authoritiesByUsernameQuery("select username, 'ROLE_USER' from public.user where username = ? ");
 
         auth.inMemoryAuthentication().withUser("admin").password("admin").roles("ADMIN");
 

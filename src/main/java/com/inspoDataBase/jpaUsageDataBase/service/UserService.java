@@ -34,7 +34,7 @@ public class UserService {
     }
 
     public User findUserByUsername(String userName) {
-        return userRepository.findByUserName(userName).get(0);
+        return userRepository.findByUserName(userName);
     }
 
     public void printUserList(List<User> usersList) {

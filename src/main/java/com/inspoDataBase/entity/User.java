@@ -13,34 +13,34 @@ import java.util.List;
  * Created by mmikilchenko on 15.02.2017.
  */
 @Entity
-@Table(name = "user"/*, schema = "inspominder", catalog = ""*/)
+@Table(name = "public.user"/*,uniqueConstraints={@UniqueConstraint(columnNames={"USERNAME"})}*/)
 public class User {
 
     @Id
-    @Column(name = "ID")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
 
     @Basic
-    @Column(name = "FIRST_NAME", length = 45)
-    @Size(min = 3, max = 45, message = "{Size.user.firstName}  ")
+    @Column(name = "first_name", length = 15)
+    @Size(min = 3, max = 15, message = "{Size.user.firstName}  ")
     private String firstName;
 
     @Basic
-    @Column(name = "LAST_NAME", length = 45)
-    @Size(min = 3, max = 45, message = "{Size.user.lastName}  ")
+    @Column(name = "last_name", length = 15)
+    @Size(min = 3, max = 15, message = "{Size.user.lastName}  ")
     private String lastName;
 
     @Basic
-    @Column(name = "USERNAME", length = 45)
+    @Column(name = "username", length = 15,unique = true)
     @NotEmpty
-    @Size(min = 7, max = 45, message = "{Size.user.userName}  ")
+    @Size(min = 7, max = 15, message = "{Size.user.userName}  ")
     private String userName;
 
     @Basic
-    @Column(name = "PASSWORD", length = 45)
+    @Column(name = "password", length = 15)
     @NotEmpty
-    @Size(min = 3, max = 45, message = "{Size.user.password}  ")
+    @Size(min = 3, max = 15, message = "{Size.user.password}  ")
     private String password;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)

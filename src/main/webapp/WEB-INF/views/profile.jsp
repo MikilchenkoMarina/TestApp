@@ -62,27 +62,26 @@
     <div class="bs-component">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h3 class="panel-title"><s:message code="inspominder.addReminder"/></h3>
+                <h3 class="panel-title"><s:message code="inspominder.remindersSettings"/></h3>
             </div>
             <div class="panel-body">
 
-                <springForm:form method="POST" commandName="reminder" enctype="multipart/form-data"
-                                 cssClass="form-style-7">
+                <springForm:form method="POST" commandName="remindersAppearDelay" cssClass="form-style-7">
                     <ul>
                         <li>
-                            <springForm:label path="text"> <s:message code="inspominder.text"/> </springForm:label>
-                            <springForm:input path="text" cssErrorClass="error"/>
-                            <springForm:errors path="text" cssClass="error"/>
-                        </li>
-                        <li>
-                            <springForm:label path="imageLink"><s:message code="inspominder.image"/></springForm:label>
-                            <input type="file" name="user-file"/>
+                            <s:message code="inspominder.reminderDelay"/>
+                            <ul>
+                                <springForm:select path="delay" items="${delayMap}"/>
+                            </ul>
                         </li>
                     </ul>
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                    <springForm:button class="btn btn-primary"> <s:message code="inspominder.save"/>
-                    </springForm:button>
+
+                    <springForm:button class="btn btn-primary">  <s:message code="inspominder.remindersRun"/> </springForm:button>
+
                 </springForm:form>
+
+
             </div>
         </div>
     </div>

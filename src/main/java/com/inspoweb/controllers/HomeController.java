@@ -6,10 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
+
 
 /**
  * @author mmikilchenko on 01.03.2017.
@@ -39,12 +41,14 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public String processRegistration(@Valid User user, BindingResult resul) {
-        userService.addUser(user);
-
-        if (resul.hasErrors()) {
+    public String processRegistration(@Valid User user, BindingResult result) {
+        if (userNameAlreadyExisted(user)) {
+            result.addError(new FieldError("user", "userName", "User with this name is already existed."));
+        }
+        if (result.hasErrors()) {
             return "registerForm";
         }
+        userService.addUser(user);
 
         return "redirect:/user/" + user.getUserName();
     }
@@ -62,5 +66,8 @@ public class HomeController {
         return "login";
     }
 
+    private boolean userNameAlreadyExisted(User user) {
+        return userService.findUserByUsername(user.getUserName()) != null ? true : false;
+    }
 
 }

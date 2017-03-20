@@ -48,7 +48,9 @@
                             <springForm:errors path="password" cssClass="error"/>
                         </li>
                     </ul>
-                    <springForm:button class="btn btn-primary"> <s:message code="inspominder.register"/></springForm:button>
+
+                    <springForm:button class="btn btn-primary"> <s:message
+                            code="inspominder.register"/></springForm:button>
                 </springForm:form>
 
                 <%--  /panel-body    --%>
