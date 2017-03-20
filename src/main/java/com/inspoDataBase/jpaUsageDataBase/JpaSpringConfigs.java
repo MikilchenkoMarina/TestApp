@@ -40,7 +40,7 @@ public class JpaSpringConfigs {
         ds.setUsername("postgres");
         ds.setPassword("admin");
         Properties props = new Properties();
-        props.setProperty("defaultAutoCommit", "true");
+        props.setProperty("defaultAutoCommit", "true");//
         ds.setConnectionProperties(props);
         return ds;
     }
