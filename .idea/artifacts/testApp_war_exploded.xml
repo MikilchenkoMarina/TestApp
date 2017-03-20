@@ -7,7 +7,7 @@
           <element id="module-output" name="testApp" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.31" />
+          <element id="library" level="project" name="Maven: postgresql:postgresql:9.1-901.jdbc4" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.3.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.3.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.3.0.RELEASE" />
