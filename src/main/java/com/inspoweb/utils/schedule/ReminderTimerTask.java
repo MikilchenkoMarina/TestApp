@@ -1,6 +1,7 @@
 package com.inspoweb.utils.schedule;
 
 import com.inspoDataBase.entity.Reminder;
+import javafx.scene.control.Alert;
 import net.coobird.thumbnailator.Thumbnails;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -34,18 +35,27 @@ public class ReminderTimerTask extends TimerTask {
     }
 
     public void showReminderMessage(Reminder reminder) throws MalformedURLException {
-        JOptionPane jOptionPane = new JOptionPane();
+        System.setProperty("java.awt.headless","true");
+        System.setProperty("Djava.awt.headless","true");
+        System.setProperty("-Djava.awt.headless","true");
+        System.setProperty("DISPLAY","0.0 export DISPLAY");
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information Dialog");
+        alert.setHeaderText("Look, an Information Dialog");
+        alert.setContentText("I have a great message for you!");
+
+        alert.showAndWait();
+
+      JOptionPane jOptionPane = new JOptionPane();
         jOptionPane.requestFocusInWindow();
         jOptionPane.requestFocus();
         try {
             BufferedImage img = ImageIO.read(new URL(reminder.getImageLink()));
             ImageIcon icon = new ImageIcon(Thumbnails.of(img).forceSize(300, 300).asBufferedImage());
-            System.setProperty("java.awt.headless","true");
-            System.setProperty("Djava.awt.headless","true");
-            System.setProperty("-Djava.awt.headless","true");
-            System.setProperty("DISPLAY","0.0 export DISPLAY");
 
-            jOptionPane.showMessageDialog(null, reminder.getText(), "Reminder", JOptionPane.DEFAULT_OPTION, icon);
+
+      jOptionPane.showMessageDialog(null, reminder.getText(), "Reminder", JOptionPane.DEFAULT_OPTION, icon);
         } catch (IOException e) {
             e.printStackTrace();
         }
