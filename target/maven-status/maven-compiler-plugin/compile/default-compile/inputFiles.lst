@@ -17,6 +17,7 @@ C:\Java_Pro\inspominder-spring-application\src\main\java\com\inspoDataBase\jpaUs
 C:\Java_Pro\inspominder-spring-application\src\main\java\com\inspoDataBase\jpaUsageDataBase\jpaRepository\ReminderRepository.java
 C:\Java_Pro\inspominder-spring-application\src\main\java\com\inspoDataBase\jpaUsageDataBase\tests\JpaRepositoryTest.java
 C:\Java_Pro\inspominder-spring-application\src\main\java\com\inspoweb\configs\RootConfig.java
+C:\Java_Pro\inspominder-spring-application\src\main\java\com\inspoweb\utils\schedule\JavaFxMessage.java
 C:\Java_Pro\inspominder-spring-application\src\main\java\com\inspoweb\utils\schedule\ReminderTimer.java
 C:\Java_Pro\inspominder-spring-application\src\main\java\com\inspoDataBase\entity\Reminder.java
 C:\Java_Pro\inspominder-spring-application\src\main\java\com\inspoweb\controllers\HomeController.java

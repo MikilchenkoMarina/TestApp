@@ -2,25 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9e76db2-ee29-4362-9136-94bef97b07cf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_2_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zenjava_javafx_maven_plugin_8_1_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_toolchain_2_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_shared_maven_shared_utils_0_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_mojo_keytool_api_1_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_mojo_keytool_api_1_7_1_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_mojo_keytool_maven_plugin_1_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_utils_1_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_twdata_maven_mojo_executor_2_2_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/inspoweb/utils/schedule/JavaFxMessage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/inspoweb/configs/RootConfig.class" afterPath="$PROJECT_DIR$/target/classes/com/inspoweb/configs/RootConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/inspoweb/utils/schedule/ReminderTimerTask.class" afterPath="$PROJECT_DIR$/target/classes/com/inspoweb/utils/schedule/ReminderTimerTask.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/inspominder_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/inspominder_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inspominder.iml" afterPath="$PROJECT_DIR$/inspominder.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/inspoweb/utils/schedule/ReminderTimerTask.java" afterPath="$PROJECT_DIR$/src/main/java/com/inspoweb/utils/schedule/ReminderTimerTask.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="C:\Java_Pro\inspominder-spring-application\.idea\shelf/" />
@@ -63,17 +49,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="278" column="26" lean-forward="false" selection-start-line="278" selection-start-column="26" selection-end-line="278" selection-end-column="26" />
+            <state relative-caret-position="551">
+              <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RootConfig.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RootConfig.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/inspoweb/configs/RootConfig.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
@@ -276,10 +262,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/inspoweb/configs/InspoWebInitializer.java" />
         <option value="$PROJECT_DIR$/system.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/inspoweb/utils/schedule/ReminderTimer.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/inspoweb/utils/schedule/JavaFxMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/inspoweb/utils/schedule/ReminderTimerTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/inspoweb/configs/RootConfig.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -1431,14 +1417,7 @@
       <workItem from="1490018038979" duration="9066000" />
       <workItem from="1490037282802" duration="3053000" />
       <workItem from="1490040356094" duration="2792000" />
-      <workItem from="1490087475634" duration="22138000" />
-    </task>
-    <task id="LOCAL-00014" summary="7. Apache Tiles - page layout with header and footer have been added">
-      <created>1488385288562</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1488385288562</updated>
+      <workItem from="1490087475634" duration="22605000" />
     </task>
     <task id="LOCAL-00015" summary="7. Apache Tiles - page layout with header and footer have been added">
       <created>1488392767191</created>
@@ -1776,11 +1755,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490110142291</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="JavaFX messages">
+      <created>1490112298131</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1490112298131</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="370870000" />
+    <option name="totallyTimeSpent" value="371337000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1935" height="1056" extended-state="0" />
@@ -1806,7 +1792,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3121516" sideWeight="0.782516" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3121516" sideWeight="0.782516" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26086956" sideWeight="0.48933902" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2820513" sideWeight="0.4978678" order="10" side_tool="false" content_ui="tabs" />
@@ -1889,7 +1875,8 @@
     <MESSAGE value="Refactoring" />
     <MESSAGE value=" PostgreSQL instead of MySQL" />
     <MESSAGE value="Heroku deploy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Heroku deploy" />
+    <MESSAGE value="JavaFX messages" />
+    <option name="LAST_COMMIT_MESSAGE" value="JavaFX messages" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2356,14 +2343,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="278" column="26" lean-forward="false" selection-start-line="278" selection-start-column="26" selection-end-line="278" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/inspoweb/controllers/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="895">
@@ -2447,6 +2426,14 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
