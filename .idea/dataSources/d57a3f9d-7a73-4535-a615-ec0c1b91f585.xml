@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="da8858ppltd1t9@ec2-176-34-113-15.eu-west-1.compute.amazonaws.com">
+<dataSource name="d4lagt4sp55fs2@ec2-176-34-111-152.eu-west-1.compute.amazonaws.com">
   <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.0">
     <root id="1"/>
-    <database id="2" parent="1" name="da8858ppltd1t9">
-      <ObjectId>838676</ObjectId>
+    <database id="2" parent="1" name="d4lagt4sp55fs2">
+      <ObjectId>812454</ObjectId>
       <Current>1</Current>
       <Visible>1</Visible>
     </database>
     <schema id="3" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-03-20.16:35:11.228</IntrospectionTimestamp>
-      <IntrospectionStateNumber>3398735</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2017-03-21.11:14:53.593</IntrospectionTimestamp>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -29,100 +28,5 @@
     <schema id="8" parent="2" name="information_schema">
       <ObjectId>13003</ObjectId>
     </schema>
-    <sequence id="9" parent="3" name="reminder_id_seq">
-      <ObjectId>843333</ObjectId>
-      <StateNumber>3398735</StateNumber>
-      <SequenceIdentity>1</SequenceIdentity>
-    </sequence>
-    <sequence id="10" parent="3" name="user_id_seq">
-      <ObjectId>843323</ObjectId>
-      <StateNumber>3398721</StateNumber>
-      <SequenceIdentity>1</SequenceIdentity>
-    </sequence>
-    <table id="11" parent="3" name="reminder">
-      <ObjectId>843335</ObjectId>
-      <StateNumber>3398735</StateNumber>
-    </table>
-    <table id="12" parent="3" name="user">
-      <ObjectId>843325</ObjectId>
-      <StateNumber>3398735</StateNumber>
-    </table>
-    <column id="13" parent="11" name="id">
-      <Position>1</Position>
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>3398735</StateNumber>
-      <DefaultExpression>nextval(&apos;reminder_id_seq&apos;::regclass)</DefaultExpression>
-    </column>
-    <column id="14" parent="11" name="text">
-      <Position>2</Position>
-      <DataType>varchar(200)|0</DataType>
-      <StateNumber>3398735</StateNumber>
-    </column>
-    <column id="15" parent="11" name="imagelink">
-      <Position>3</Position>
-      <DataType>varchar(200)|0</DataType>
-      <StateNumber>3398735</StateNumber>
-    </column>
-    <column id="16" parent="11" name="user_id">
-      <Position>4</Position>
-      <DataType>integer|0</DataType>
-      <StateNumber>3398735</StateNumber>
-    </column>
-    <foreign-key id="17" parent="11" name="reminder_user_id_fkey">
-      <ObjectId>843339</ObjectId>
-      <ColNames>user_id</ColNames>
-      <RefTableName>user</RefTableName>
-      <RefKeyName>user_pkey</RefKeyName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="18" parent="12" name="id">
-      <Position>1</Position>
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>3398721</StateNumber>
-      <DefaultExpression>nextval(&apos;user_id_seq&apos;::regclass)</DefaultExpression>
-    </column>
-    <column id="19" parent="12" name="first_name">
-      <Position>2</Position>
-      <DataType>varchar(15)|0</DataType>
-      <StateNumber>3398721</StateNumber>
-    </column>
-    <column id="20" parent="12" name="last_name">
-      <Position>3</Position>
-      <DataType>varchar(15)|0</DataType>
-      <StateNumber>3398721</StateNumber>
-    </column>
-    <column id="21" parent="12" name="username">
-      <Position>4</Position>
-      <DataType>varchar(15)|0</DataType>
-      <StateNumber>3398721</StateNumber>
-    </column>
-    <column id="22" parent="12" name="password">
-      <Position>5</Position>
-      <DataType>varchar(15)|0</DataType>
-      <StateNumber>3398721</StateNumber>
-    </column>
-    <index id="23" parent="12" name="user_pkey">
-      <ObjectId>843329</ObjectId>
-      <ColNames>id</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <index id="24" parent="12" name="user_username_key">
-      <ObjectId>843331</ObjectId>
-      <ColNames>username</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="25" parent="12" name="user_pkey">
-      <ObjectId>843330</ObjectId>
-      <ColNames>id</ColNames>
-      <UnderlyingIndexName>user_pkey</UnderlyingIndexName>
-      <Primary>1</Primary>
-    </key>
-    <key id="26" parent="12" name="user_username_key">
-      <ObjectId>843332</ObjectId>
-      <ColNames>username</ColNames>
-      <UnderlyingIndexName>user_username_key</UnderlyingIndexName>
-    </key>
   </database-model>
 </dataSource>
