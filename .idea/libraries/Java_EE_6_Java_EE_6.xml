@@ -9,6 +9,9 @@
       <root url="jar://$PROJECT_DIR$/lib/javax.servlet.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/javax.annotation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.annotation.jar!/" />
+    </SOURCES>
   </library>
 </component>

@@ -35,9 +35,9 @@ public class RootConfig {
 
 /*        DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setDriverClassName("org.postgresql.Driver");
-        ds.setUrl("jdbc:postgresql://localhost:5432/postgres"*//*"jdbc:mysql://localhost:3306/inspominder"*//*);
-        ds.setUsername("postgres"*//*"root"*//*);
-        ds.setPassword("admin"*//*"admin"*//*);
+        ds.setUrl("jdbc:postgresql://localhost:5432/postgres");
+        ds.setUsername("postgres");
+        ds.setPassword("admin");
         Properties props = new Properties();
         props.setProperty("defaultAutoCommit", "true");
         ds.setConnectionProperties(props);

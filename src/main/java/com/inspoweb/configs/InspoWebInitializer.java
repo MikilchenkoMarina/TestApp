@@ -37,7 +37,7 @@ public class InspoWebInitializer extends AbstractAnnotationConfigDispatcherServl
     @Override
     protected void customizeRegistration(ServletRegistration.Dynamic  registration) {
         registration.setMultipartConfig(
-                new MultipartConfigElement("C:\\Java_Pro\\local_img_storage"));
+                new MultipartConfigElement(""));
     }
 
 }
