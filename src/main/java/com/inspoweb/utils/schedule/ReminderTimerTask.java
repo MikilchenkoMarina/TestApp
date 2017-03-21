@@ -41,15 +41,7 @@ public class ReminderTimerTask extends TimerTask {
         System.setProperty("Djava.awt.headless","true");
         System.setProperty("-Djava.awt.headless","true");
         System.setProperty("DISPLAY","0.0 export DISPLAY");
-        JavaFxMessage message = new JavaFxMessage();
-        message.run();
 
- /*       Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Information Dialog");
-        alert.setHeaderText("Look, an Information Dialog");
-        alert.setContentText("I have a great message for you!");
-
-        alert.showAndWait();*/
 
       JOptionPane jOptionPane = new JOptionPane();
         jOptionPane.requestFocusInWindow();
