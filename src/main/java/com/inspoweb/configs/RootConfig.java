@@ -32,6 +32,16 @@ import static org.springframework.orm.jpa.vendor.Database.POSTGRESQL;
 public class RootConfig {
     @Bean
     public DataSource dataSource() {
+
+/*        DriverManagerDataSource ds = new DriverManagerDataSource();
+        ds.setDriverClassName("org.postgresql.Driver");
+        ds.setUrl("jdbc:postgresql://localhost:5432/postgres"*//*"jdbc:mysql://localhost:3306/inspominder"*//*);
+        ds.setUsername("postgres"*//*"root"*//*);
+        ds.setPassword("admin"*//*"admin"*//*);
+        Properties props = new Properties();
+        props.setProperty("defaultAutoCommit", "true");
+        ds.setConnectionProperties(props);
+        return ds;*/
         DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setDriverClassName("org.postgresql.Driver");
         ds.setUrl("jdbc:postgresql://ec2-176-34-111-152.eu-west-1.compute.amazonaws.com:5432/d4lagt4sp55fs2");

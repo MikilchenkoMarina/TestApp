@@ -75,10 +75,7 @@
                             </ul>
                         </li>
                     </ul>
-                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-
                     <springForm:button class="btn btn-primary">  <s:message code="inspominder.remindersRun"/> </springForm:button>
-
                 </springForm:form>
 
 

@@ -62,7 +62,7 @@
                         </li>
                     </ul>
 
- <%--                   <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                     <springForm:button class="btn btn-primary"> <s:message code="inspominder.save"/>
                     </springForm:button>
                 </springForm:form>
