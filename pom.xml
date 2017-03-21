@@ -59,7 +59,11 @@
             <plugin>
                 <groupId>com.zenjava</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
-                <version>8.1.4</version>
+                <version>8.6.0</version>
+                <configuration>
+                    <mainClass></mainClass>
+                    <allPermissions>true</allPermissions>
+                </configuration>
             </plugin>
         </plugins>
     </build>
