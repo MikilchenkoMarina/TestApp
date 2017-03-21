@@ -32,8 +32,7 @@ import static org.springframework.orm.jpa.vendor.Database.POSTGRESQL;
 public class RootConfig {
     @Bean
     public DataSource dataSource() {
-/*
-        DriverManagerDataSource ds = new DriverManagerDataSource();
+/*        DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setDriverClassName("org.postgresql.Driver");
         ds.setUrl("jdbc:postgresql://localhost:5432/postgres");
         ds.setUsername("postgres");
