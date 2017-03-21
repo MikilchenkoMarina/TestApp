@@ -150,14 +150,5 @@
     <orderEntry type="library" name="Maven: net.iharder:base64:2.3.8" level="project" />
     <orderEntry type="library" name="Maven: net.java.dev.swing-layout:swing-layout:1.0.2" level="project" />
     <orderEntry type="library" name="Maven: net.coobird:thumbnailator:0.4.8" level="project" />
-    <orderEntry type="module-library">
-      <library name="Maven: com.oracle:javafx:2.2">
-        <CLASSES>
-          <root url="jar://C:/Program Files/Java/jdk1.8.0_121/jre/lib/ext/jfxrt.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
   </component>
 </module>

@@ -8,6 +8,9 @@ import net.coobird.thumbnailator.Thumbnails;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.imageio.ImageIO;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -43,6 +46,15 @@ public class ReminderTimerTask extends TimerTask {
         System.setProperty("DISPLAY","0.0 export DISPLAY");
 
 
+        ScriptEngineManager factory = new ScriptEngineManager();
+        ScriptEngine engine = factory.getEngineByName("JavaScript");
+        try {
+            engine.eval("window.alert('MESSAGE')");
+        } catch (ScriptException e) {
+            e.printStackTrace();
+        }
+
+
       JOptionPane jOptionPane = new JOptionPane();
         jOptionPane.requestFocusInWindow();
         jOptionPane.requestFocus();
@@ -51,6 +63,8 @@ public class ReminderTimerTask extends TimerTask {
             ImageIcon icon = new ImageIcon(Thumbnails.of(img).forceSize(300, 300).asBufferedImage());
 
 
+
+            ;
       jOptionPane.showMessageDialog(null, reminder.getText(), "Reminder", JOptionPane.DEFAULT_OPTION, icon);
         } catch (IOException e) {
             e.printStackTrace();
