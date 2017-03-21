@@ -36,9 +36,9 @@ public class JpaSpringConfigs {
     public DataSource dataSource() {
         DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setDriverClassName("org.postgresql.Driver");
-        ds.setUrl("jdbc:postgresql://localhost:5432/inspo");
-        ds.setUsername("postgres");
-        ds.setPassword("admin");
+        ds.setUrl("jdbc:postgresql://ec2-176-34-111-152.eu-west-1.compute.amazonaws.com:5432/d4lagt4sp55fs2");
+        ds.setUsername("actwscmdhhlpxv");
+        ds.setPassword("09115b2a249808dd6e7c6b82b293de67ec95139cf15a3ac1bb3a80d8dda93e1d");
         Properties props = new Properties();
         props.setProperty("defaultAutoCommit", "true");
         ds.setConnectionProperties(props);

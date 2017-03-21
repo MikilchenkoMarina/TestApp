@@ -7,7 +7,7 @@
     <groupId>com</groupId>
     <artifactId>inspominder</artifactId>
     <version>1.0.1</version>
-<!--    <packaging>war</packaging>-->
+    <packaging>war</packaging>
 
 
     <properties>
@@ -18,7 +18,7 @@
     </properties>
     <build>
         <plugins>
-<!--            <plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.1.1</version>
@@ -33,7 +33,7 @@
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
-            </plugin>-->
+            </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
