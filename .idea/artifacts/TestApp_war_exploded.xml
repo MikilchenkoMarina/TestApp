@@ -4,7 +4,7 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="TestApp" />
+          <element id="module-output" name="inspominder" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: postgresql:postgresql:9.1-901.jdbc4" />
@@ -131,7 +131,7 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/inspominder-spring-application-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="TestApp/web/Web" />
+      <element id="javaee-facet-resources" facet="inspominder/web/Web" />
     </root>
   </artifact>
 </component>
