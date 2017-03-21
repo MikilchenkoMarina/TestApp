@@ -46,7 +46,7 @@ public class UserController {
         model.addAttribute("reminderList", userReminders);
         model.addAttribute("reminder", new Reminder());
 
-        Map<Integer, String> delayMap = new HashMap<>();
+        Map<Integer, String> delayMap = new HashMap<Integer, String>();
         delayMap.put(1, "1 min");
         delayMap.put(10, "10 min");
         delayMap.put(20, "20 min");
