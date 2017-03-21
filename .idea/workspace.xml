@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9e76db2-ee29-4362-9136-94bef97b07cf" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/inspoweb/configs/RootConfig.class" afterPath="$PROJECT_DIR$/target/classes/com/inspoweb/configs/RootConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/inspoweb/utils/schedule/ReminderTimer.class" afterPath="$PROJECT_DIR$/target/classes/com/inspoweb/utils/schedule/ReminderTimer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/inspoweb/configs/RootConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/inspoweb/configs/RootConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/inspoweb/utils/schedule/ReminderTimer.java" afterPath="$PROJECT_DIR$/src/main/java/com/inspoweb/utils/schedule/ReminderTimer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system.properties" afterPath="$PROJECT_DIR$/system.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -48,6 +49,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="146">
+              <caret line="262" column="66" lean-forward="false" selection-start-line="262" selection-start-column="61" selection-end-line="262" selection-end-column="66" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="RootConfig.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/inspoweb/configs/RootConfig.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -63,17 +74,29 @@
       <file leaf-file-name="ReminderTimerTask.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/inspoweb/utils/schedule/ReminderTimerTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="41" column="73" lean-forward="false" selection-start-line="41" selection-start-column="73" selection-end-line="41" selection-end-column="73" />
+            <state relative-caret-position="56">
+              <caret line="36" column="12" lean-forward="true" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JOptionPane.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/javax/swing/JOptionPane.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2121">
+              <caret line="314" column="7" lean-forward="true" selection-start-line="314" selection-start-column="7" selection-end-line="314" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReminderTimer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ReminderTimer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/inspoweb/utils/schedule/ReminderTimer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
+            <state relative-caret-position="140">
               <caret line="42" column="43" lean-forward="false" selection-start-line="42" selection-start-column="43" selection-end-line="42" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -102,11 +125,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="system.properties" pinned="false" current-in-tab="false">
+      <file leaf-file-name="system.properties" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/system.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="51">
+              <caret line="3" column="18" lean-forward="false" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -127,26 +150,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="510">
               <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MultipartConfigElement.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/javax.servlet.jar!/javax/servlet/MultipartConfigElement.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="carousel.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/html/carousel.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="33" column="26" lean-forward="false" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -182,6 +185,7 @@
       <find>run(</find>
       <find>4</find>
       <find>protocol</find>
+      <find>swing</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -251,9 +255,9 @@
         <option value="$PROJECT_DIR$/postgreSQL.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/inspoweb/configs/InspoWebInitializer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/inspoweb/utils/schedule/ReminderTimerTask.java" />
-        <option value="$PROJECT_DIR$/system.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/inspoweb/configs/RootConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/inspoweb/utils/schedule/ReminderTimer.java" />
+        <option value="$PROJECT_DIR$/system.properties" />
       </list>
     </option>
   </component>
@@ -1405,14 +1409,7 @@
       <workItem from="1490018038979" duration="9066000" />
       <workItem from="1490037282802" duration="3053000" />
       <workItem from="1490040356094" duration="2792000" />
-      <workItem from="1490087475634" duration="16845000" />
-    </task>
-    <task id="LOCAL-00009" summary="3.User Profile  view and controller are added">
-      <created>1488218711104</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1488218711104</updated>
+      <workItem from="1490087475634" duration="17597000" />
     </task>
     <task id="LOCAL-00010" summary="4. Registration Validation added">
       <created>1488220945575</created>
@@ -1750,11 +1747,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490106191773</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Heroku deploy">
+      <created>1490106727836</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1490106727836</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="365577000" />
+    <option name="totallyTimeSpent" value="366329000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1935" height="1056" extended-state="0" />
@@ -2035,13 +2039,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.3.0.RELEASE/spring-context-4.3.0.RELEASE.jar!/org/springframework/validation/BindException.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="171" column="32" lean-forward="false" selection-start-line="171" selection-start-column="32" selection-end-line="171" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/inspoweb/controllers/UploadFilePageController.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.3.0.RELEASE/spring-context-4.3.0.RELEASE.jar!/org/springframework/validation/FieldError.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -2221,14 +2218,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/inspoDataBase/jpaUsageDataBase/JpaSpringConfigs.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -2373,22 +2362,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/inspoweb/utils/schedule/ReminderTimerTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="41" column="73" lean-forward="false" selection-start-line="41" selection-start-column="73" selection-end-line="41" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/inspoweb/configs/RootConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -2399,13 +2372,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="262" column="66" lean-forward="false" selection-start-line="262" selection-start-column="61" selection-end-line="262" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/javax/swing/JOptionPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2121">
+          <caret line="314" column="7" lean-forward="true" selection-start-line="314" selection-start-column="7" selection-end-line="314" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/inspoweb/utils/schedule/ReminderTimer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
+        <state relative-caret-position="140">
           <caret line="42" column="43" lean-forward="false" selection-start-line="42" selection-start-column="43" selection-end-line="42" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/inspoweb/utils/schedule/ReminderTimerTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="36" column="12" lean-forward="true" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="18" lean-forward="false" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
