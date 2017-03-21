@@ -41,7 +41,9 @@ public class ReminderTimerTask extends TimerTask {
             BufferedImage img = ImageIO.read(new URL(reminder.getImageLink()));
             ImageIcon icon = new ImageIcon(Thumbnails.of(img).forceSize(300, 300).asBufferedImage());
             System.setProperty("java.awt.headless","true");
-            System.setProperty("DISPLAY","0:0");
+            System.setProperty("Djava.awt.headless","true");
+            System.setProperty("-Djava.awt.headless","true");
+            System.setProperty("DISPLAY","0.0 export DISPLAY");
 
             jOptionPane.showMessageDialog(null, reminder.getText(), "Reminder", JOptionPane.DEFAULT_OPTION, icon);
         } catch (IOException e) {
