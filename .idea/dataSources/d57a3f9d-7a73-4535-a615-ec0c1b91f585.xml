@@ -9,8 +9,8 @@
     </database>
     <schema id="3" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-03-21.13:05:42.654</IntrospectionTimestamp>
-      <IntrospectionStateNumber>62532531</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2017-03-21.13:58:57.924</IntrospectionTimestamp>
+      <IntrospectionStateNumber>62561964</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -29,97 +29,102 @@
     <schema id="8" parent="2" name="information_schema">
       <ObjectId>13003</ObjectId>
     </schema>
-    <sequence id="9" parent="3" name="reminder_id_seq">
+    <sequence id="9" parent="3" name="hibernate_sequence">
+      <ObjectId>896498</ObjectId>
+      <StateNumber>62561964</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="10" parent="3" name="reminder_id_seq">
       <ObjectId>896469</ObjectId>
       <StateNumber>62532531</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
     </sequence>
-    <sequence id="10" parent="3" name="user_id_seq">
+    <sequence id="11" parent="3" name="user_id_seq">
       <ObjectId>896459</ObjectId>
       <StateNumber>62532438</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
     </sequence>
-    <table id="11" parent="3" name="reminder">
+    <table id="12" parent="3" name="reminder">
       <ObjectId>896471</ObjectId>
       <StateNumber>62532531</StateNumber>
     </table>
-    <table id="12" parent="3" name="user">
+    <table id="13" parent="3" name="user">
       <ObjectId>896461</ObjectId>
       <StateNumber>62532531</StateNumber>
     </table>
-    <column id="13" parent="11" name="id">
+    <column id="14" parent="12" name="id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>62532531</StateNumber>
       <DefaultExpression>nextval(&apos;reminder_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="14" parent="11" name="text">
+    <column id="15" parent="12" name="text">
       <Position>2</Position>
       <DataType>varchar(200)|0</DataType>
       <StateNumber>62532531</StateNumber>
     </column>
-    <column id="15" parent="11" name="imagelink">
+    <column id="16" parent="12" name="imagelink">
       <Position>3</Position>
       <DataType>varchar(200)|0</DataType>
       <StateNumber>62532531</StateNumber>
     </column>
-    <column id="16" parent="11" name="user_id">
+    <column id="17" parent="12" name="user_id">
       <Position>4</Position>
       <DataType>integer|0</DataType>
       <StateNumber>62532531</StateNumber>
     </column>
-    <foreign-key id="17" parent="11" name="reminder_user_id_fkey">
+    <foreign-key id="18" parent="12" name="reminder_user_id_fkey">
       <ObjectId>896475</ObjectId>
       <ColNames>user_id</ColNames>
       <RefTableName>user</RefTableName>
       <RefKeyName>user_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="18" parent="12" name="id">
+    <column id="19" parent="13" name="id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>62532438</StateNumber>
       <DefaultExpression>nextval(&apos;user_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="19" parent="12" name="first_name">
+    <column id="20" parent="13" name="first_name">
       <Position>2</Position>
       <DataType>varchar(15)|0</DataType>
       <StateNumber>62532438</StateNumber>
     </column>
-    <column id="20" parent="12" name="last_name">
+    <column id="21" parent="13" name="last_name">
       <Position>3</Position>
       <DataType>varchar(15)|0</DataType>
       <StateNumber>62532438</StateNumber>
     </column>
-    <column id="21" parent="12" name="username">
+    <column id="22" parent="13" name="username">
       <Position>4</Position>
       <DataType>varchar(15)|0</DataType>
       <StateNumber>62532438</StateNumber>
     </column>
-    <column id="22" parent="12" name="password">
+    <column id="23" parent="13" name="password">
       <Position>5</Position>
       <DataType>varchar(15)|0</DataType>
       <StateNumber>62532438</StateNumber>
     </column>
-    <index id="23" parent="12" name="user_pkey">
+    <index id="24" parent="13" name="user_pkey">
       <ObjectId>896465</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="24" parent="12" name="user_username_key">
+    <index id="25" parent="13" name="user_username_key">
       <ObjectId>896467</ObjectId>
       <ColNames>username</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="25" parent="12" name="user_pkey">
+    <key id="26" parent="13" name="user_pkey">
       <ObjectId>896466</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>user_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <key id="26" parent="12" name="user_username_key">
+    <key id="27" parent="13" name="user_username_key">
       <ObjectId>896468</ObjectId>
       <ColNames>username</ColNames>
       <UnderlyingIndexName>user_username_key</UnderlyingIndexName>

@@ -40,6 +40,7 @@ public class ReminderTimerTask extends TimerTask {
         try {
             BufferedImage img = ImageIO.read(new URL(reminder.getImageLink()));
             ImageIcon icon = new ImageIcon(Thumbnails.of(img).forceSize(300, 300).asBufferedImage());
+            System.setProperty("DISPLAY","0:0");
             jOptionPane.showMessageDialog(null, reminder.getText(), "Reminder", JOptionPane.DEFAULT_OPTION, icon);
         } catch (IOException e) {
             e.printStackTrace();
