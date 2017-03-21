@@ -40,7 +40,7 @@ public class ReminderTimer {
         for (Reminder reminder : remindersList) {
             TimerTask task = new ReminderTimerTask(reminder);
             timer.schedule(task, 0, 360000);
-            userNotificationThread.sleep(TimeUnit.MINUTES.toMillis(appearingDelay));
+            userNotificationThread.sleep(3000/*TimeUnit.MINUTES.toMillis(appearingDelay)*/);
         }
 
     }
