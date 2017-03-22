@@ -9,57 +9,10 @@
     <link href="<c:url value="/resources/css/myCustom.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/css/bootstrap2.css" />" rel="stylesheet">
     <script src="<c:url value="/resources/js/jquery-3.2.0.js"/>"></script>
-<%--        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>--%>
-    <%--    <script src="<c:url value="/resources/js/window-message.js" />"></script>--%>
+    <script src="<c:url value="/resources/js/window-message.js" />"></script>
     <div class="page-header" align="center"><h1><s:message code="inspominder.userProfile"/></h1></div>
 
 </head>
-
-<script>
-    $(document).ready(function myFunction() {
-        var text
-        var userNameText= '<c:out value="${user.userName}"/>'
-debugger
-        $(".show-mindow").click(function myFunction() {
-
-
-            /*---------------------------------*/
-            var timeout = 5000;
-            $('.selectDelay').each(function (k, objSel) {
-                if (objSel.selectedIndex != -1) {
-                    timeout = objSel.options[objSel.selectedIndex].value;
-                    alert('Reminder selected timeout = ' + timeout)
-                }
-            });
-
-            /*---------------------------------*/
-
-
-            $('.itemText').each(function (k, obj) {
-                setTimeout(function () {
-                    text = obj.innerText
-                    alert(obj.innerText + 'LA LA LA ')
-                 /*   checkForm(obj.innerText)*/
-                    console.log(timeout)
-                }, timeout);
-                timeout += timeout;
-
-            });
-        });
-    });
-    /*---------------------------------*/
-    var myAlert
-    function checkForm() {
-        myAlert = window.open('', 'alert', width=100 ,height=100,top=100,left=100)
-        var wC = '<html><head></head><body onBlur="self.focus();">'
-        wC += "This is reminder text "+ text + " DEAR" + userNameText
-        wC += '<img src="http://www.phytology.ru/images/stories/Floristika3/quadrifoglio.jpg" width="50" height="50" >'
-        wC += '</body></html>'
-        myAlert.document.open()
-        myAlert.document.write(wC)
-    }
-</script>
-
 
 <body>
 <%--account info panel--%>
@@ -76,6 +29,7 @@ debugger
             </div>
         </div>
     </div>
+</div>
 
     <%--reminders list panel--%>
     <div class="col-md-4">
@@ -126,7 +80,7 @@ debugger
                                 </ul>
                             </li>
                         </ul>
-                        <springForm:button class="show-mindow">
+                        <springForm:button class="show-mindow" >
                             <s:message code="inspominder.remindersRun"/>
                         </springForm:button>
 
