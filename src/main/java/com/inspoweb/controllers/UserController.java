@@ -50,9 +50,9 @@ public class UserController {
         model.addAttribute("reminder", new Reminder());
 
         Map<Integer, String> delayMap = new HashMap<Integer, String>();
-        delayMap.put(1, "1 min");
-        delayMap.put(10, "10 min");
-        delayMap.put(20, "20 min");
+        delayMap.put((int) TimeUnit.MINUTES.toMillis(1), "1 min");
+        delayMap.put((int) TimeUnit.MINUTES.toMillis(10), "10 min");
+        delayMap.put((int) TimeUnit.MINUTES.toMillis(20), "20 min");
 
         model.addAttribute("delayMap", delayMap);
         model.addAttribute("remindersAppearDelay", new RemindersAppearDelay());
@@ -61,11 +61,12 @@ public class UserController {
 
 
     @RequestMapping(value = "/{userName}",method = RequestMethod.POST)
-    public String runReminders(@PathVariable String userName, @ModelAttribute RemindersAppearDelay remindersAppearDelay,Authentication authentication) {
+    public String runReminders(@PathVariable String userName, @ModelAttribute RemindersAppearDelay remindersAppearDelay,Authentication authentication,Model model) {
 
-
+        model.addAttribute("selectedDelay", remindersAppearDelay.getDelay());
         User loggedUser= userService.findUserByUsername(authentication.getName());
         ReminderTimer reminderTimer = new ReminderTimer(loggedUser, reminderService, remindersAppearDelay.getDelay());
+
         try {
             reminderTimer.run();
         } catch (InterruptedException e) {
