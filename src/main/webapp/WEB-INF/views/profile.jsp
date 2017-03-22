@@ -8,10 +8,32 @@
 <head>
     <link href="<c:url value="/resources/css/myCustom.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/css/bootstrap2.css" />" rel="stylesheet">
+    <script src="<c:url value="/resources/js/jquery-3.2.0.js"/>"></script>
+    <%--    <script src="<c:url value="/resources/js/window-message.js" />"></script>--%>
     <div class="page-header" align="center"><h1><s:message code="inspominder.userProfile"/></h1></div>
+
 </head>
 
 <body>
+
+<script>
+    $(document).ready(function myFunction() {
+        var text2 = '<c:out value="${user.userName}"/>'
+        alert(text2 + 'TEXT 2')
+
+        debugger
+
+        $('.itemText').each(function(i, obj) {
+
+           setInterval(function repeat() {
+                alert( obj.innerText + 'LA LA LA ' );
+            }, 2000);
+        });
+
+    });
+</script>
+
+
 <%--account info panel--%>
 <div class="col-md-4">
     <div class="bs-component">
@@ -23,6 +45,7 @@
                 <label><s:message code="inspominder.firstName"/> : </label> ${user.firstName} <br/>
                 <label><s:message code="inspominder.lastName"/> : </label> ${user.lastName} <br/>
                 <label><s:message code="inspominder.userName"/> : </label> ${user.userName} <br/>
+
             </div>
         </div>
     </div>
@@ -44,8 +67,9 @@
                             <li>
                                 <div class="media-body">
                                     <div class="snippet">
-                                        <a class="pull-left"> <img src="<c:url value="${reminder.imageLink}"/>"/> </a>
-                                        <p><h4><c:out value="${reminder.text}"/></h4></p>
+                                        <a class="pull-left"> <img src="<c:url value="${reminder.imageLink}" />"/> </a>
+                                        <p><h4 class="itemText"><c:out value="${reminder.text}"/></h4></p>
+
                                     </div>
                                 </div>
                             </li>
@@ -75,9 +99,12 @@
                             </ul>
                         </li>
                     </ul>
-                    <springForm:button class="btn btn-primary">  <s:message code="inspominder.remindersRun"/> </springForm:button>
+                    <springForm:button class="show-mindow"> <s:message code="inspominder.remindersRun"/>
+                    </springForm:button>
+
                 </springForm:form>
 
+                <%-------------------------------------------------------------------------------------------------------------------------------%>
 
             </div>
         </div>

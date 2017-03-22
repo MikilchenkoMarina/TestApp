@@ -7,6 +7,8 @@ import com.inspoDataBase.jpaUsageDataBase.service.ReminderService;
 import com.inspoDataBase.jpaUsageDataBase.service.UserService;
 import com.inspoweb.utils.FileUploadUtil;
 import com.inspoweb.utils.schedule.ReminderTimer;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 
 /**
@@ -57,8 +60,9 @@ public class UserController {
     }
 
 
-    @RequestMapping(value = "/{userName}", method = RequestMethod.POST)
+    @RequestMapping(value = "/{userName}",method = RequestMethod.POST)
     public String runReminders(@PathVariable String userName, @ModelAttribute RemindersAppearDelay remindersAppearDelay,Authentication authentication) {
+
 
         User loggedUser= userService.findUserByUsername(authentication.getName());
         ReminderTimer reminderTimer = new ReminderTimer(loggedUser, reminderService, remindersAppearDelay.getDelay());
@@ -70,6 +74,7 @@ public class UserController {
 
         return "redirect:/user/{userName}";
     }
+
 
 
 }

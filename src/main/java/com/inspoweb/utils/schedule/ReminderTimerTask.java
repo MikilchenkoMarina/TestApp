@@ -40,19 +40,19 @@ public class ReminderTimerTask extends TimerTask {
     }
 
     public void showReminderMessage(Reminder reminder) throws MalformedURLException {
-        System.setProperty("java.awt.headless","true");
+/*        System.setProperty("java.awt.headless","true");
         System.setProperty("Djava.awt.headless","true");
         System.setProperty("-Djava.awt.headless","true");
-        System.setProperty("DISPLAY","0.0 export DISPLAY");
+        System.setProperty("DISPLAY","0.0 export DISPLAY");*/
 
 
-        ScriptEngineManager factory = new ScriptEngineManager();
+/*        ScriptEngineManager factory = new ScriptEngineManager();
         ScriptEngine engine = factory.getEngineByName("JavaScript");
         try {
             engine.eval("window.alert('MESSAGE')");
         } catch (ScriptException e) {
             e.printStackTrace();
-        }
+        }*/
 
 
       JOptionPane jOptionPane = new JOptionPane();

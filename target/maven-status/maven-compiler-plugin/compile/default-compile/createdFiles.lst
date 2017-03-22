@@ -1,8 +1,6 @@
-com\inspoweb\utils\schedule\JavaFxMessage.class
 com\inspoDataBase\entity\Reminder.class
 com\inspoweb\utils\FileUploadUtil.class
 com\inspoDataBase\jpaUsageDataBase\service\ReminderService.class
-com\inspoweb\utils\schedule\JavaFxMessage$1.class
 com\inspoDataBase\jpaUsageDataBase\service\UserService.class
 com\inspoDataBase\jpaUsageDataBase\tests\JpaRepositoryTest.class
 com\inspoDataBase\jpaUsageDataBase\jpaRepository\ReminderRepository.class
