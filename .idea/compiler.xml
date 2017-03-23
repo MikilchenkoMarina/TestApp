@@ -12,7 +12,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="inspominder" target="1.8" />
+      <module name="inspominder" target="1.5" />
       <module name="TestApp" target="1.5" />
       <module name="testApp" target="1.8" />
     </bytecodeTargetLevel>

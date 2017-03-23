@@ -48,7 +48,7 @@ public class UserController {
     }
 
     private Map<Integer, String> getDelayMap() {
-        Map<Integer, String> delayMap = new LinkedHashMap<>();
+        Map<Integer, String> delayMap = new LinkedHashMap<Integer, String>();
         delayMap.put(5000, "5 seconds (for demo)");
         delayMap.put((int) TimeUnit.MINUTES.toMillis(10), "10 minutes");
         delayMap.put((int) TimeUnit.MINUTES.toMillis(30), "30 minutes");
