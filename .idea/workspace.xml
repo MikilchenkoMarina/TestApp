@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e9e76db2-ee29-4362-9136-94bef97b07cf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Procfile" afterPath="$PROJECT_DIR$/Procfile" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="C:\Java_Pro\inspominder-spring-application\.idea\shelf/" />
@@ -103,7 +102,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
               <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1490276547200" expanded="true" signature="648:1521" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1473,14 +1474,7 @@
       <workItem from="1490037282802" duration="3053000" />
       <workItem from="1490040356094" duration="2792000" />
       <workItem from="1490087475634" duration="64066000" />
-      <workItem from="1490257771716" duration="19686000" />
-    </task>
-    <task id="LOCAL-00031" summary="Refactoring">
-      <created>1489676702203</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1489676702203</updated>
+      <workItem from="1490257771716" duration="19820000" />
     </task>
     <task id="LOCAL-00032" summary="Refactoring">
       <created>1489930203503</created>
@@ -1818,11 +1812,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490280082801</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="js popaps added">
+      <created>1490280183124</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1490280183124</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="432484000" />
+    <option name="totallyTimeSpent" value="432618000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1935" height="1056" extended-state="0" />
@@ -2410,7 +2411,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1490276547200" expanded="true" signature="648:1521" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
