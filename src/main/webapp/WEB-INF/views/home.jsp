@@ -24,6 +24,9 @@
             </div>
         </c:when>
         <c:otherwise>
+            <div class="alert alert-dismissible alert-success">
+                For demo login you can use username: <em>inspouser</em>, password: <em>pass123</em>
+            </div>
             <h2 class="text-primary"><s:message code="inspominder.welcome"/></h2>
         </c:otherwise>
     </c:choose>
