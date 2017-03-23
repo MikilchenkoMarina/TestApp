@@ -17,8 +17,6 @@ import javax.swing.*;
 import javax.validation.Valid;
 import java.io.IOException;
 import java.util.List;
-
-
 /**
  * @author mmikilchenko on 27.02.2017.
  */
@@ -42,15 +40,15 @@ public class ReminderController {
     @RequestMapping(method = RequestMethod.GET)
     public String showUserReminders(@PathVariable String userName, Model model) {
         User user = userService.findUserByUsername(userName);
-        List<Reminder> userReminders = reminderService.findReminderByUser(user);
         model.addAttribute("user", user);
-        model.addAttribute("reminderList", userReminders);
+        model.addAttribute("reminderList", reminderService.findReminderByUser(user));
         model.addAttribute("reminder", new Reminder());
+
         return "reminders";
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String addserReminders(@PathVariable String userName, @RequestParam("user-file") MultipartFile multipartFile, @Valid Reminder reminder, BindingResult resul) {
+    public String addNewReminder(@PathVariable String userName, @RequestParam("user-file") MultipartFile multipartFile, @Valid Reminder reminder, BindingResult resul, Model model) {
         User user = userService.findUserByUsername(userName);
         if (!multipartFile.isEmpty()) {
 
@@ -64,7 +62,9 @@ public class ReminderController {
         if (!resul.hasErrors()) {
             reminderService.addReminder(reminder, user);
         } else {
-              return "reminders";
+            model.addAttribute("reminderList", reminderService.findReminderByUser(user));
+
+            return "reminders";
         }
         return "redirect:/user/{userName}/reminders";
     }
@@ -73,6 +73,7 @@ public class ReminderController {
     public String getReminder(@PathVariable Integer reminderId, Model model) {
         Reminder userReminder = reminderService.findReminderById(reminderId);
         model.addAttribute("reminder", userReminder);
+
         return "reminder";
     }
 
@@ -80,6 +81,7 @@ public class ReminderController {
     //@ResponseStatus(HttpStatus.NO_CONTENT)
     public String deleteReminder(@PathVariable Integer reminderId) {
         reminderService.deleteReminderById(reminderId);
+
         return "redirect:/user/{userName}/reminders";
     }
 

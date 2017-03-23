@@ -1,9 +1,12 @@
 $(document).ready(function myFunction() {
-    var text
-    var imgLink
-    $(".show-mindow").click(function myFunction() {
 
+    $("#show-window").click(function myFunction() {
+        var text
+        var imgLink
+        var myAlert
         var timeout = 5000;
+
+
         $('.selectDelay').each(function (k, objSel) {
             if (objSel.selectedIndex != -1) {
                 timeout = parseInt(objSel.options[objSel.selectedIndex].value);
@@ -15,30 +18,35 @@ $(document).ready(function myFunction() {
         $('.snippet').each(function (k, obj) {
             console.log(obj)
             setTimeout(function () {
-
+                debugger
                 text = obj.innerText
                 imgLink = $(obj).find("img")[0].currentSrc
                 checkForm(obj.innerText, $(obj).find("img")[0].currentSrc)
 
             }, timeout);
+
             timeout += tick;
 
         });
+
+
+        function checkForm(text, imgLink) {
+            myAlert = window.open('', 'alert', "width = 450, height = 450, top = 100, left = 100")
+            var wC = '<html><head>'
+            wC += '<link href="/resources/css/reminder-window.css" rel="stylesheet">'
+            wC += '</head>'
+            wC += '<body onBlur="self.focus();">'
+
+            wC += '<div></div><h3> You wanted to remember this : </br></p><div></div>'
+            wC += '<h2>' + text + '</h2>'
+            wC += '<img src=' + imgLink + '>'
+
+            wC += '</body></html>'
+            myAlert.document.open()
+            myAlert.document.write(wC)
+        }
     });
 });
-
-var myAlert
-function checkForm(text, imgLink) {
-    myAlert = window.open('', 'alert', "width = 400, height = 400, top = 200, left = 200")
-    var wC = '<html><head></head><body onBlur="self.focus();">'
-    wC += "This is reminder text " + text + " DEAR"
-    debugger
-    wC += '<img src=' + imgLink + ' width="300" height=auto >'
-    wC += '</body></html>'
-    myAlert.document.open()
-    myAlert.document.write(wC)
-}
-
 
 
 

@@ -35,6 +35,8 @@ body {
     width: auto;
 }
 
+
+
 .snippet img {
     width: 200px;
     height: auto;
@@ -43,6 +45,8 @@ body {
     border: 2px solid #e95420;
     border-radius: 5px;
 }
+
+
 
 .panel-body div.scroll {
     max-height: 600px;

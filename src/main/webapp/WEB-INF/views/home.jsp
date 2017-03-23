@@ -13,13 +13,13 @@
 </head>
 
 <body>
-<div class="col-md-6 col-md-offset-2">
+<div class="col-lg-4 col-lg-offset-4">
     <c:choose>
         <c:when test="${pageContext.request.userPrincipal.name != null}">
             <div class="alert alert-dismissible alert-success">
                 <spring:message code="inspominder.welcome"/> ${pageContext.request.userPrincipal.name}
                 <spring:message code="inspominder.openProfileAnCreateReminder"/>
-                <a class="btn-primary" href="<c:url value="user/${pageContext.request.userPrincipal.name}"/>">
+                <a class="btn btn-primary" href="<c:url value="user/${pageContext.request.userPrincipal.name}"/>">
                     <spring:message code="inspominder.goToProfile"/></a>
             </div>
         </c:when>

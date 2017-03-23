@@ -1,0 +1,25 @@
+body{
+    background-color: rgb(255, 209, 172);
+}
+img {
+    width: 400px;
+    height: auto;
+    border: 2px solid #e95420;
+    border-radius: 5px;
+}
+
+div {
+    align-content: center;
+    border: 1px solid #e95420;
+    border-radius: 3px;
+}
+ h1, h3 {
+     color: #e95420;
+     font-weight: bold;
+     font-family: Georgia, "Times New Roman", Times, serif
+ }
+
+ h2, h4 {
+     font-weight: bold;
+     font-family: Georgia, "Times New Roman", Times, serif
+ }

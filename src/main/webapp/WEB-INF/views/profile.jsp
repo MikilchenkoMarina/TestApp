@@ -31,67 +31,67 @@
     </div>
 </div>
 
-    <%--reminders list panel--%>
-    <div class="col-md-4">
-        <div class="bs-component">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><s:message code="inspominder.Reminders"/></h3>
-                </div>
-                <div class="panel-body">
-                    <a class="btn btn-primary" href="<c:url value="${user.userName}"/>/reminders"> <s:message
-                            code="inspominder.openRemindersPage"/></a></br>
-                    <div class="scroll">
-                        <ol class="custom-counter">
-                            <c:forEach var="reminder" items="${reminderList}">
-                                <li>
-                                    <div class="media-body">
-                                        <div class="snippet">
-                                            <a class="pull-left"> <img src="<c:url value="${reminder.imageLink}" />"/>
-                                            </a>
-                                            <p><h4 class="itemText"><c:out value="${reminder.text}"/></h4></p>
-
-                                        </div>
-                                    </div>
-                                </li>
-                            </c:forEach>
-                        </ol>
-                    </div>
-                </div>
+<%--reminders list panel--%>
+<div class="col-md-4">
+    <div class="bs-component">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title"><s:message code="inspominder.Reminders"/></h3>
             </div>
-        </div>
-    </div>
-
-    <%--add reminder Form panel--%>
-    <div class="col-md-4">
-        <div class="bs-component">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><s:message code="inspominder.remindersSettings"/></h3>
-                </div>
-                <div class="panel-body">
-
-                    <springForm:form method="POST" commandName="remindersAppearDelay" cssClass="form-style-7">
-                        <ul>
+            <div class="panel-body">
+                <a class="btn btn-primary" href="<c:url value="${user.userName}"/>/reminders"> <s:message
+                        code="inspominder.openRemindersPage"/></a></br>
+                <div class="scroll">
+                    <ol class="custom-counter">
+                        <c:forEach var="reminder" items="${reminderList}">
                             <li>
-                                <s:message code="inspominder.reminderDelay"/>
-                                <ul>
-                                    <springForm:select class="selectDelay" path="delay" items="${delayMap}"/>
-                                </ul>
+                                <div class="media-body">
+                                    <div class="snippet">
+                                        <a class="pull-left"> <img src="<c:url value="${reminder.imageLink}" />"/>
+                                        </a>
+                                        <p><h4 class="itemText"><c:out value="${reminder.text}"/></h4></p>
+
+                                    </div>
+                                </div>
                             </li>
-                        </ul>
-                        <springForm:button class="show-mindow" >
-                            <s:message code="inspominder.remindersRun"/>
-                        </springForm:button>
-
-                    </springForm:form>
-
-                    <%-------------------------------------------------------------------------------------------------------------------------------%>
-
+                        </c:forEach>
+                    </ol>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+<%--add reminder Form panel--%>
+<div class="col-md-4">
+    <div class="bs-component">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title"><s:message code="inspominder.remindersSettings"/></h3>
+            </div>
+            <div class="panel-body">
+
+                <springForm:form method="GET" action="redirect:#" commandName="remindersAppearDelay"
+                                 cssClass="form-style-7">
+                    <ul>
+                        <li>
+                            <s:message code="inspominder.reminderDelay"/>
+                            <ul>
+                                <springForm:select class="selectDelay" path="delay" items="${delayMap}"/>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <springForm:button id="show-window" class="btn btn-primary">
+                        <s:message code="inspominder.remindersRun"/>
+                    </springForm:button>
+
+                </springForm:form>
+                <small>Please make sure that the pop-up blocker is disabled</small>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

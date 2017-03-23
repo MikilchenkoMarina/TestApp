@@ -17,10 +17,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-
 
 /**
  * @author mmikilchenko on 27.02.2017.
@@ -36,46 +36,49 @@ public class UserController {
     public UserController(UserService userService, ReminderService reminderService) {
         this.userService = userService;
         this.reminderService = reminderService;
-
     }
-
 
     @RequestMapping(value = "/{userName}", method = RequestMethod.GET)
     public String showUserProfileByUserName(@PathVariable String userName, Model model) {
-
         User user = userService.findUserByUsername(userName);
-        List<Reminder> userReminders = reminderService.findReminderByUser(user);
+
         model.addAttribute("user", user);
-        model.addAttribute("reminderList", userReminders);
+        model.addAttribute("reminderList", reminderService.findReminderByUser(user));
         model.addAttribute("reminder", new Reminder());
-
-        Map<Integer, String> delayMap = new HashMap<>();
-        delayMap.put(10000, "10 sec");
-        delayMap.put((int) TimeUnit.MINUTES.toMillis(10), "10 min");
-        delayMap.put((int) TimeUnit.MINUTES.toMillis(20), "20 min");
-
-        model.addAttribute("delayMap", delayMap);
+        model.addAttribute("delayMap", getDelayMap());
         model.addAttribute("remindersAppearDelay", new RemindersAppearDelay());
         return "profile";
     }
 
+    private Map<Integer, String> getDelayMap() {
+        Map<Integer, String> delayMap = new LinkedHashMap<>();
+        delayMap.put(5000, "5 seconds (for demo)");
+        delayMap.put((int) TimeUnit.MINUTES.toMillis(10), "10 minutes");
+        delayMap.put((int) TimeUnit.MINUTES.toMillis(30), "30 minutes");
+        delayMap.put((int) TimeUnit.MINUTES.toMillis(60), "1 hour");
+        return delayMap;
+    }
 
-    @RequestMapping(value = "/{userName}",method = RequestMethod.POST)
-    public String runReminders(@PathVariable String userName, @ModelAttribute RemindersAppearDelay remindersAppearDelay,Authentication authentication,Model model) {
 
-        model.addAttribute("selectedDelay", remindersAppearDelay.getDelay());
-/*        User loggedUser= userService.findUserByUsername(authentication.getName());
+    @Deprecated
+
+    // Jpanel - reminders via TimerTask and users thread, not supported on Heroku, re-maked via javaScript
+
+/*    @RequestMapping(value = "/{userName}",method = RequestMethod.POST)*/
+    public String runReminders(@PathVariable String userName, @ModelAttribute RemindersAppearDelay remindersAppearDelay, Authentication authentication, Model model) {
+
+        //model.addAttribute("selectedDelay", remindersAppearDelay.getDelay());
+        User loggedUser = userService.findUserByUsername(authentication.getName());
         ReminderTimer reminderTimer = new ReminderTimer(loggedUser, reminderService, remindersAppearDelay.getDelay());
 
         try {
             reminderTimer.run();
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }*/
+        }
 
         return "redirect:/user/{userName}";
     }
-
 
 
 }
