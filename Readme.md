@@ -10,7 +10,7 @@ The user must register.  After that, he can create any reminders for himself, in
  <p>
 On the user's profile page, the user can run reminders. After that they will appear in the form of pop-up windows with selected frequency.</p>
 </h4>
-
+<h2> Application link  https://inspominder.herokuapp.com </h2>
 <h3>Technology stack </h3>
 <ul>
 <li> Spring MVC</li>
@@ -27,4 +27,3 @@ On the user's profile page, the user can run reminders. After that they will app
 <li> Deployed on Heroku </li>
 </ul>
 
-<h2> Application link  https://inspominder.herokuapp.com// </h2>
