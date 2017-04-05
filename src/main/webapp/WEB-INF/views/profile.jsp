@@ -47,9 +47,10 @@
                             <li>
                                 <div class="media-body">
                                     <div class="snippet">
-                                        <a class="pull-left"> <img src="<c:url value="${reminder.imageLink}" />"/>
+                                        <a class="pull-left"><img alt="img"
+                                                                  src="data:image/jpeg;base64,${reminder.imageLink}"/>
                                         </a>
-                                        <p><h4 class="itemText"><c:out value="${reminder.text}"/></h4></p>
+                                        <p> <h4 class="itemText"><c:out value="${reminder.text}"/></h4> </p>
 
                                     </div>
                                 </div>

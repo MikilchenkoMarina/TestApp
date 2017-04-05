@@ -5,18 +5,19 @@ import com.inspoDataBase.entity.User;
 import com.inspoDataBase.jpaUsageDataBase.service.ReminderService;
 import com.inspoDataBase.jpaUsageDataBase.service.UserService;
 import com.inspoweb.utils.FileUploadUtil;
+import org.apache.commons.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.swing.*;
 import javax.validation.Valid;
 import java.io.IOException;
-import java.util.List;
 /**
  * @author mmikilchenko on 27.02.2017.
  */
@@ -52,9 +53,18 @@ public class ReminderController {
         User user = userService.findUserByUsername(userName);
         if (!multipartFile.isEmpty()) {
 
+
             try {
-                String amazonS3ImageUrl = fileUploadUtil.saveImageToAmazonS3(multipartFile, userName);
-                reminder.setImageLink(amazonS3ImageUrl);
+                reminder.setImage(multipartFile.getBytes());
+                byte[] encodeBase64 = Base64.encodeBase64(multipartFile.getBytes());
+                String base64Encoded = new String(encodeBase64, "UTF-8");
+                reminder.setBase64image(encodeBase64);
+                reminder.setImageLink(base64Encoded);
+
+
+      /*   Amazon S3 usage temporary switched off
+           String amazonS3ImageUrl = fileUploadUtil.saveImageToAmazonS3(multipartFile, userName);
+                reminder.setImageLink(amazonS3ImageUrl);*/
             } catch (IOException e) {
                 e.printStackTrace();
             }

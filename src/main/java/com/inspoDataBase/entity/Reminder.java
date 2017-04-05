@@ -13,21 +13,30 @@ public class Reminder {
 
     @Id
     @Column(name = "id", nullable = false)
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int reminderId;
 
     @ManyToOne(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
 
+
     @Basic
     @Column(name = "text", length = 200)
-    @NotEmpty( message = "{NotEmpty.reminder.text}  ")
+    @NotEmpty(message = "{NotEmpty.reminder.text}  ")
     private String text;
 
     @Basic
-    @Column(name = "imagelink", length = 200)
+    @Column(name = "imagelink")
     private String imageLink;
+
+    @Column(name = "base64image")
+    private byte[] base64image;
+
+    /*   *//* @Lob*//*@Type(type = "BT")*/
+    @Basic(fetch = FetchType.LAZY)
+    @Column(name = "image")
+    private byte[] image;
 
     public Reminder() {
     }
@@ -70,6 +79,22 @@ public class Reminder {
         this.imageLink = themeId;
     }
 
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
+
+    public byte[] getBase64image() {
+        return base64image;
+    }
+
+    public void setBase64image(byte[] base64image) {
+        this.base64image = base64image;
+    }
+
 
     @Override
     public String toString() {
@@ -79,4 +104,6 @@ public class Reminder {
                 ", imageLink='" + imageLink + '\'' +
                 '}';
     }
+
+
 }
