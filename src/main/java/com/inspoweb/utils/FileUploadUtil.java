@@ -25,11 +25,11 @@ import java.nio.file.Paths;
 @Component
 public class FileUploadUtil {
     public String saveImageToAmazonS3(MultipartFile multipartFile, String userName) throws AmazonServiceException, IOException {
-        String ACCESS_KEY = "AKIAJWY4NJKP3YZVN3HQ";
-        String SECRET_KEY = "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";
+        String ACCESS_KEY = "";
+        String SECRET_KEY = "";
         String END_POINT_URL = "https://s3.eu-central-1.amazonaws.com";// e.g http://s3.amazonaws.com
 
-        String BUCKET = "inspominderbucket";
+        String BUCKET = "";
         String IMAGE_LOCATION = userName;
         String S3_CACHE = "xxx"; // e.g 60
         String fileName = System.currentTimeMillis() + "_" + multipartFile.getOriginalFilename();
