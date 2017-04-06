@@ -26,7 +26,7 @@
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>adbcjzuihiiwbd</user-name>
-      <resolve-scope>d8lh3j7cg0tv84:public,adbcjzuihiiwbd</resolve-scope>
+      <resolve-scope>d8lh3j7cg0tv84:adbcjzuihiiwbd,public</resolve-scope>
     </data-source>
   </component>
 </project>
