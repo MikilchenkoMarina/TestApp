@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e9e76db2-ee29-4362-9136-94bef97b07cf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Readme.md" afterPath="$PROJECT_DIR$/Readme.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/application.properties" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/application.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="C:\Java_Pro\inspominder-spring-application\.idea\shelf/" />
@@ -1446,14 +1444,7 @@
       <workItem from="1491309166463" duration="58000" />
       <workItem from="1491314866264" duration="4159000" />
       <workItem from="1491398739446" duration="17995000" />
-      <workItem from="1491479609855" duration="3638000" />
-    </task>
-    <task id="LOCAL-00057" summary="Heroku deploy">
-      <created>1490106191773</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1490106191773</updated>
+      <workItem from="1491479609855" duration="4204000" />
     </task>
     <task id="LOCAL-00058" summary="Heroku deploy">
       <created>1490106727836</created>
@@ -1791,11 +1782,18 @@
       <option name="project" value="LOCAL" />
       <updated>1491481955182</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="configs changes">
+      <created>1491483254414</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1491483254414</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="476246000" />
+    <option name="totallyTimeSpent" value="476812000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1935" height="1056" extended-state="0" />
