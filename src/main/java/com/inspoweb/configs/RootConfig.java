@@ -1,10 +1,8 @@
 package com.inspoweb.configs;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.FilterType;
+import org.springframework.context.annotation.*;
+import org.springframework.core.env.Environment;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -29,27 +27,25 @@ import static org.springframework.orm.jpa.vendor.Database.POSTGRESQL;
 @EnableJpaRepositories(basePackages = "com.inspoDataBase.jpaUsageDataBase.jpaRepository")
 @EnableTransactionManagement
 @ComponentScan(basePackages = "com", excludeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION, value = EnableWebMvc.class)})
+@PropertySource("classpath:application.properties")
 public class RootConfig {
+
+
+    @Autowired
+    private Environment environment;
+
+
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setDriverClassName("org.postgresql.Driver");
-        ds.setUrl("jdbc:postgresql://localhost:5432/postgres");
-        ds.setUsername("postgres");
-        ds.setPassword("admin");
+        ds.setUrl(environment.getRequiredProperty("jdbc.url"));
+        ds.setUsername(environment.getRequiredProperty("jdbc.username"));
+        ds.setPassword(environment.getRequiredProperty("jdbc.password"));
         Properties props = new Properties();
         props.setProperty("defaultAutoCommit", "true");
         ds.setConnectionProperties(props);
         return ds;
-/*        DriverManagerDataSource ds = new DriverManagerDataSource();
-        ds.setDriverClassName("org.postgresql.Driver");
-        ds.setUrl("jdbc:postgresql://ec2-176-34-111-152.eu-west-1.compute.amazonaws.com:5432/d4lagt4sp55fs2");
-        ds.setUsername("actwscmdhhlpxv");
-        ds.setPassword("09115b2a249808dd6e7c6b82b293de67ec95139cf15a3ac1bb3a80d8dda93e1d");
-        Properties props = new Properties();
-        props.setProperty("defaultAutoCommit", "true");
-        ds.setConnectionProperties(props);
-        return ds;*/
     }
 
     @Bean

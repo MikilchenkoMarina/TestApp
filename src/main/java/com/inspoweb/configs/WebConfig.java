@@ -80,6 +80,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/js/**").addResourceLocations("/js/").setCachePeriod(31556926);
         registry.addResourceHandler("/html/**").addResourceLocations("/html/").setCachePeriod(31556926);
         registry.addResourceHandler("/fonts/**").addResourceLocations("/fonts/").setCachePeriod(31556926);
+        registry.addResourceHandler("/props/**").addResourceLocations("/props/").setCachePeriod(31556926);
     }
 
     @Override
