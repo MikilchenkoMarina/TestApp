@@ -1,5 +1,6 @@
 package com.inspoweb.controllers;
 
+import com.amazonaws.util.IOUtils;
 import com.inspoDataBase.entity.Reminder;
 import com.inspoDataBase.entity.User;
 import com.inspoDataBase.jpaUsageDataBase.service.ReminderService;
@@ -18,6 +19,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 import java.io.IOException;
+import java.net.URL;
+
 /**
  * @author mmikilchenko on 27.02.2017.
  */
@@ -27,7 +30,6 @@ public class ReminderController {
 
     @Autowired
     private FileUploadUtil fileUploadUtil;
-
     private UserService userService;
     private ReminderService reminderService;
 
@@ -51,23 +53,16 @@ public class ReminderController {
     @RequestMapping(method = RequestMethod.POST)
     public String addNewReminder(@PathVariable String userName, @RequestParam("user-file") MultipartFile multipartFile, @Valid Reminder reminder, BindingResult resul, Model model) {
         User user = userService.findUserByUsername(userName);
-        if (!multipartFile.isEmpty()) {
-
-
-            try {
-                reminder.setImage(multipartFile.getBytes());
-                byte[] encodeBase64 = Base64.encodeBase64(multipartFile.getBytes());
-                String base64Encoded = new String(encodeBase64, "UTF-8");
-                reminder.setBase64image(encodeBase64);
-                reminder.setImageLink(base64Encoded);
-
+        try {
+            byte[] encodeBase64 = getImageEncodeBase64(multipartFile);
+            String base64Encoded = new String(encodeBase64, "UTF-8");
+            reminder.setImageLink(base64Encoded);
 
       /*   Amazon S3 usage temporary switched off
            String amazonS3ImageUrl = fileUploadUtil.saveImageToAmazonS3(multipartFile, userName);
                 reminder.setImageLink(amazonS3ImageUrl);*/
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         if (!resul.hasErrors()) {
             reminderService.addReminder(reminder, user);
@@ -95,5 +90,10 @@ public class ReminderController {
         return "redirect:/user/{userName}/reminders";
     }
 
+    private byte[] getImageEncodeBase64(MultipartFile multipartFile) throws IOException {
+        return multipartFile.isEmpty() ?
+                Base64.encodeBase64(IOUtils.toByteArray((new URL("http://www.yo-yoma.com/wp-content/themes/yym/assets/images/orangeWave.png")).openStream()), true)
+                : Base64.encodeBase64(multipartFile.getBytes());
+    }
 
 }
